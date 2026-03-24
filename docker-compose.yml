@@ -5,5 +5,5 @@ services:
     ports:
       - "8080:80"
     volumes:
-      - .:/usr/share/nginx/html # esto ahce que se reinicie todo el rato
+      - .:/usr/share/nginx/html # esto hace que se reinicie todo el rato
     restart: always
