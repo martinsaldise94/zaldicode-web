@@ -1,0 +1,9 @@
+services:
+  web:
+    build: .
+    container_name: zaldicode-app
+    ports:
+      - "8080:80"
+    volumes:
+      - .:/usr/share/nginx/html # esto ahce que se reinicie todo el rato
+    restart: always
