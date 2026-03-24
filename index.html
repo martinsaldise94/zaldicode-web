@@ -1,0 +1,700 @@
+<!doctype html>
+<html lang="es" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Zaldicode | Diseño web y soluciones digitales</title>
+    <meta
+      name="description"
+      content="Diseño web profesional para negocios que quieren más clientes. Webs rápidas, modernas y enfocadas en vender."
+    />
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700;900&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="icon" type="image/png" href="assests/logo.png" />
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"
+      defer
+    ></script>
+    <script src="script.js" defer></script>
+  </head>
+  <body class="antialiased">
+    <!-- Cabecera -->
+    <header
+      class="fixed top-4 left-1/2 -translate-x-1/2 w-[95%] max-w-6xl z-50 floating-nav rounded-2xl"
+    >
+      <nav class="flex items-center justify-between p-4 pl-6">
+        <div class="flex items-center gap-2">
+          <div class="w-6 h-6 border-4 border-orange-500 rounded-full"></div>
+          <h1 class="text-xl font-extrabold tracking-tighter text-slate-900">
+            Zaldi<span class="text-orange-600">code</span>
+          </h1>
+        </div>
+        <ul
+          class="hidden md:flex items-center space-x-2 text-sm font-semibold text-slate-700"
+        >
+          <li>
+            <a
+              href="#sobre-mi"
+              class="px-4 py-2 rounded-lg hover:bg-orange-50 transition"
+              >Sobre mí</a
+            >
+          </li>
+          <li>
+            <a
+              href="#servicios"
+              class="px-4 py-2 rounded-lg hover:bg-orange-50 transition"
+              >Servicios</a
+            >
+          </li>
+          <li>
+            <a
+              href="#portfolio"
+              class="px-4 py-2 rounded-lg hover:bg-orange-50 transition"
+              >Portfolio</a
+            >
+          </li>
+          <li>
+            <a
+              href="#contacto"
+              class="ml-2 px-5 py-2.5 btn-brutal rounded-xl text-xs uppercase tracking-widest"
+              >Pide Presupuesto</a
+            >
+          </li>
+        </ul>
+      </nav>
+    </header>
+
+    <!-- Eslogan inicial y publicidad -->
+
+    <section
+      id="hero"
+      class="relative pt-40 pb-24 md:pt-56 md:pb-36 px-6 overflow-hidden"
+    >
+      <div
+        class="absolute -top-20 -right-20 w-80 h-80 bg-orange-100 rounded-full opacity-50 blur-3xl -z-10"
+      ></div>
+
+      <div
+        class="max-w-6xl mx-auto grid md:grid-cols-[1fr,auto] gap-12 items-center animate-slide-up"
+      >
+        <div>
+          <h2
+            class="text-5xl md:text-7xl font-extrabold text-slate-900 mb-6 leading-[1.1] tracking-tighter"
+          >
+            Consigue más clientes con una
+            <span class="relative inline-block">
+              <span class="relative z-10">web profesional</span>
+              <span
+                class="absolute bottom-1 left-0 w-full h-3 bg-orange-200 -z-10"
+              ></span>
+            </span>
+          </h2>
+          <p
+            class="text-xl md:text-2xl mb-12 text-slate-700 max-w-2xl leading-relaxed font-medium"
+          >
+            Diseño páginas rápidas, modernas y enfocadas a convertir visitas en
+            ventas.
+          </p>
+          <a
+            href="#contacto"
+            class="px-12 py-5 btn-brutal rounded-2xl text-lg font-bold"
+          >
+            Pide tu presupuesto
+          </a>
+        </div>
+        <div
+          class="hidden md:flex w-80 h-auto bg-slate-900 tactile-card rounded-3xl p-6 rotate-3 border-slate-800 shadow-2xl"
+        >
+          <div class="w-full font-mono text-xs leading-relaxed">
+            <div class="flex gap-1.5 mb-4">
+              <div class="w-2.5 h-2.5 rounded-full bg-red-500/80"></div>
+              <div class="w-2.5 h-2.5 rounded-full bg-amber-500/80"></div>
+              <div class="w-2.5 h-2.5 rounded-full bg-emerald-500/80"></div>
+            </div>
+
+            <div class="space-y-1.5">
+              <div class="text-slate-500 italic">
+                // Zaldicode Diagnostic v2.0
+              </div>
+              <div>
+                <span class="text-orange-500 font-bold">zaldicode</span>
+                <span class="text-slate-300">--analyze</span>
+              </div>
+              <div
+                class="flex justify-between border-b border-slate-800 pb-1 mt-3"
+              >
+                <span class="text-slate-400 font-medium">Performance:</span>
+                <span class="text-emerald-400 font-bold">100/100</span>
+              </div>
+              <div class="flex justify-between border-b border-slate-800 pb-1">
+                <span class="text-slate-400 font-medium">SEO Score:</span>
+                <span class="text-emerald-400 font-bold">A+</span>
+              </div>
+              <div class="flex justify-between border-b border-slate-800 pb-1">
+                <span class="text-slate-400 font-medium">Load Time:</span>
+                <span class="text-emerald-400 font-bold">0.8s</span>
+              </div>
+              <div class="flex justify-between border-b border-slate-800 pb-1">
+                <span class="text-slate-400 font-medium">UX/UI:</span>
+                <span class="text-emerald-400 font-bold">Optimized</span>
+              </div>
+              <div
+                class="mt-4 text-orange-400/80 animate-pulse font-bold tracking-widest text-[10px] uppercase text-center"
+              >
+                System Ready to Scale_
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Sobre mi -->
+    <section id="sobre-mi" class="py-20 bg-white">
+      <div
+        class="max-w-6xl mx-auto px-4 flex flex-col md:flex-row items-center gap-8"
+      >
+        <!-- FOTO -->
+        <div class="md:w-1/3">
+          <img
+            src="assests/Martin2.jpg"
+            alt="Foto de Martín"
+            class="rounded-full shadow-lg w-64 h-64 object-cover mx-auto md:mx-0 fade-in"
+          />
+        </div>
+
+        <!-- TEXTO -->
+        <div class="md:w-2/3 fade-in">
+          <h2 class="text-3xl font-bold mb-4">Sobre mí</h2>
+          <p class="mb-4">
+            Soy Martín, desarrollador con un
+            <strong>background en ciencia</strong> que define mi forma de
+            trabajar: con rigor, análisis y precisión técnica.
+          </p>
+
+          <p>
+            No solo diseño páginas web; aplico una mentalidad analítica para
+            transformar problemas complejos en soluciones digitales simples que
+            funcionan. Mi objetivo es que tu tecnología sea un activo, no un
+            dolor de cabeza.
+          </p>
+          <p>
+            Si buscas una web que no solo sea estética, sino que esté
+            <strong>optimizada bajo estándares de ingeniería</strong> y enfocada
+            a resultados reales, estás en el lugar adecuado.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Servicios -->
+
+    <section id="servicios" class="py-24 bg-white border-t border-slate-100">
+      <div class="max-w-6xl mx-auto px-6">
+        <div class="mb-16 max-w-md">
+          <h2
+            class="text-4xl font-extrabold text-slate-900 tracking-tighter mb-3"
+          >
+            Servicios
+          </h2>
+          <p class="text-lg text-slate-600 font-medium">
+            Soluciones digitales a medida, diseñadas para impactar visualmente y
+            maximizar tus resultados.
+          </p>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-8">
+          <!-- Diseño web -->
+          <div class="tactile-card p-10 rounded-3xl group">
+            <div
+              class="w-14 h-14 rounded-2xl flex items-center justify-center mb-8 text-white"
+              style="background: linear-gradient(135deg, #f97316, #fb923c)"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="w-7 h-7"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="1.5"
+                  d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
+                />
+              </svg>
+            </div>
+            <h3 class="text-2xl font-bold text-slate-900 mb-4 tracking-tight">
+              Diseño web profesional
+            </h3>
+            <p class="text-slate-700 leading-relaxed text-[15px]">
+              Webs modernas, rápidas y optimizadas para convertir visitantes en
+              clientes.
+            </p>
+          </div>
+
+          <!-- Tiendas online -->
+          <div class="tactile-card p-10 rounded-3xl group">
+            <div
+              class="w-14 h-14 rounded-2xl flex items-center justify-center mb-8 text-white"
+              style="background: linear-gradient(135deg, #f97316, #fb923c)"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="w-7 h-7"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="1.5"
+                  d="M3 3h2l.4 2M7 13h10l1-6H6.4M7 13l-1 6h13M7 13l1-6h12"
+                />
+              </svg>
+            </div>
+            <h3 class="text-2xl font-bold text-slate-900 mb-4 tracking-tight">
+              Tiendas online
+            </h3>
+            <p class="text-slate-700 leading-relaxed text-[15px]">
+              E-commerce optimizado para vender más, con experiencia de usuario
+              intuitiva y clara.
+            </p>
+          </div>
+
+          <!-- Apps personalizadas -->
+          <div class="tactile-card p-10 rounded-3xl group">
+            <div
+              class="w-14 h-14 rounded-2xl flex items-center justify-center mb-8 text-white"
+              style="background: linear-gradient(135deg, #f97316, #fb923c)"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="w-7 h-7"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="1.5"
+                  d="M7 3h10a2 2 0 012 2v14a2 2 0 01-2 2H7a2 2 0 01-2-2V5a2 2 0 012-2z"
+                />
+              </svg>
+            </div>
+            <h3 class="text-2xl font-bold text-slate-900 mb-4 tracking-tight">
+              Apps personalizadas
+            </h3>
+            <p class="text-slate-700 leading-relaxed text-[15px]">
+              Aplicaciones hechas a medida. Cuéntame tu idea y la transformaré
+              en una solución funcional.
+            </p>
+          </div>
+
+          <!-- Bases de datos -->
+          <div class="tactile-card p-10 rounded-3xl group">
+            <div
+              class="w-14 h-14 rounded-2xl flex items-center justify-center mb-8 text-white"
+              style="background: linear-gradient(135deg, #f97316, #fb923c)"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="w-7 h-7"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="1.5"
+                  d="M4 6h16M4 12h16M4 18h16"
+                />
+              </svg>
+            </div>
+            <h3 class="text-2xl font-bold text-slate-900 mb-4 tracking-tight">
+              Bases de datos
+            </h3>
+            <p class="text-slate-700 leading-relaxed text-[15px]">
+              Soluciones con análisis y estadísticas personalizadas para tu
+              negocio.
+            </p>
+          </div>
+
+          <!-- Automatización -->
+          <div class="tactile-card p-10 rounded-3xl group">
+            <div
+              class="w-14 h-14 rounded-2xl flex items-center justify-center mb-8 text-white"
+              style="background: linear-gradient(135deg, #f97316, #fb923c)"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="w-7 h-7"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="1.5"
+                  d="M12 6v2M12 16v2M6 12h2M16 12h2M9.172 9.172l1.414 1.414M13.414 13.414l1.414 1.414M9.172 14.828l1.414-1.414M13.414 10.586l1.414-1.414"
+                />
+              </svg>
+            </div>
+            <h3 class="text-2xl font-bold text-slate-900 mb-4 tracking-tight">
+              Automatización y soluciones digitales
+            </h3>
+            <p class="text-slate-700 leading-relaxed text-[15px]">
+              Optimizo procesos y creo herramientas que ahorran tiempo y mejoran
+              resultados.
+            </p>
+          </div>
+
+          <!-- Y más -->
+          <div class="tactile-card p-10 rounded-3xl group">
+            <div
+              class="w-14 h-14 rounded-2xl flex items-center justify-center mb-8 text-white"
+              style="background: linear-gradient(135deg, #f97316, #fb923c)"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="w-7 h-7"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="1.5"
+                  d="M20 12h-2M6 12H4M12 4v2M12 18v2"
+                />
+              </svg>
+            </div>
+            <h3 class="text-2xl font-bold text-slate-900 mb-4 tracking-tight">
+              Y más...
+            </h3>
+            <p class="text-slate-700 leading-relaxed text-[15px]">
+              Me adapto a tus necesidades para ofrecer el mejor producto digital
+              posible.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Valor -->
+    <section id="valor" class="py-24 px-6 bg-orange-50/50">
+      <div
+        class="max-w-6xl mx-auto grid md:grid-cols-[1fr,1.5fr] gap-16 items-start"
+      >
+        <div class="md:sticky md:top-28">
+          <h2
+            class="text-4xl font-extrabold text-slate-900 tracking-tighter mb-4"
+          >
+            ¿Por qué Zaldicode?
+          </h2>
+          <p class="text-lg text-slate-600 font-medium">
+            Mi enfoque combina la ingeniería técnica con una obsesión por la
+            conversión.
+          </p>
+        </div>
+
+        <div class="space-y-6">
+          <div
+            class="group tactile-card p-6 rounded-2xl flex items-center gap-6 border-l-4 border-l-orange-500"
+          >
+            <div
+              class="text-4xl font-black text-orange-500 group-hover:text-orange-400 transition"
+            >
+              01
+            </div>
+            <p class="text-lg font-semibold text-slate-800">
+              Webs rápidas y optimizadas
+            </p>
+          </div>
+          <div
+            class="group tactile-card p-6 rounded-2xl flex items-center gap-6 border-l-4 border-l-orange-500"
+          >
+            <div
+              class="text-4xl font-black text-orange-500 group-hover:text-orange-400 transition"
+            >
+              02
+            </div>
+            <p class="text-lg font-semibold text-slate-800">
+              Diseño enfocado a resultados
+            </p>
+          </div>
+          <div
+            class="group tactile-card p-6 rounded-2xl flex items-center gap-6 border-l-4 border-l-orange-500"
+          >
+            <div
+              class="text-4xl font-black text-orange-500 group-hover:text-orange-400 transition"
+            >
+              03
+            </div>
+            <p class="text-lg font-semibold text-slate-800">
+              Soluciones adaptadas a cada negocio
+            </p>
+          </div>
+          <div
+            class="group tactile-card p-6 rounded-2xl flex items-center gap-6 border-l-4 border-l-orange-500"
+          >
+            <div
+              class="text-4xl font-black text-orange-500 group-hover:text-orange-400 transition"
+            >
+              04
+            </div>
+            <p class="text-lg font-semibold text-slate-800">
+              Comunicación directa y sin complicaciones
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Portfolio -->
+
+    <section id="portfolio" class="py-24 max-w-6xl mx-auto px-6">
+      <h2
+        class="text-3xl font-bold text-center mb-12 text-slate-900 tracking-tight"
+      >
+        Proyectos
+      </h2>
+      <div
+        class="bg-white tactile-card p-16 rounded-[2rem] text-center border-2 border-dashed border-slate-200"
+      >
+        <p
+          class="text-slate-500 italic max-w-md mx-auto text-lg leading-relaxed"
+        >
+          Estoy trabajando en nuevos proyectos que mostraré aquí próximamente.
+        </p>
+      </div>
+    </section>
+
+    <!-- Contacto -->
+    <section
+      id="contacto"
+      class="py-24 px-6 bg-white border-t border-slate-100"
+    >
+      <div
+        class="max-w-3xl mx-auto rounded-3xl p-12 tactile-card"
+        style="background-color: #f0fdf4"
+      >
+        <div class="text-center mb-12">
+          <h2
+            class="text-4xl font-extrabold text-slate-900 mb-3 tracking-tighter"
+          >
+            Cuéntame tu proyecto
+          </h2>
+          <p
+            class="text-lg text-orange-700 font-semibold bg-orange-100 inline-block px-4 py-1 rounded-full"
+          >
+            Respuesta en menos de 24 horas.
+          </p>
+        </div>
+
+        <!-- Información de contacto (arriba del formulario) -->
+        <div
+          class="max-w-3xl mx-auto mb-12 grid md:grid-cols-3 gap-6 text-center md:text-left"
+        >
+          <!-- Email -->
+          <div class="flex flex-col items-center md:items-start gap-2">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="w-6 h-6 text-orange-500 mx-auto md:mx-0"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8m0 0v10a2 2 0 01-2 2H5a2 2 0 01-2-2V8m18 0L12 13 3 8"
+              />
+            </svg>
+            <span class="text-slate-700 font-medium">zaldicode@gmail.com</span>
+          </div>
+
+          <!-- Teléfono -->
+          <div class="flex flex-col items-center md:items-start gap-2">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="w-6 h-6 text-orange-500 mx-auto md:mx-0"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M3 5a2 2 0 012-2h2.5a1 1 0 01.96.73l1 3.5a1 1 0 01-.21 1.01l-1.5 1.5a16 16 0 006.25 6.25l1.5-1.5a1 1 0 011.01-.21l3.5 1a1 1 0 01.73.96V19a2 2 0 01-2 2h-1C7.82 21 3 16.18 3 10V5z"
+              />
+            </svg>
+            <span class="text-slate-700 font-medium">+34 697 76 96 09</span>
+          </div>
+
+          <!-- Localización -->
+          <div class="flex flex-col items-center md:items-start gap-2">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="w-6 h-6 text-orange-500 mx-auto md:mx-0"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M12 11c1.104 0 2-.896 2-2s-.896-2-2-2-2 .896-2 2 .896 2 2 2z"
+              />
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M12 22s8-4.5 8-10-3.582-8-8-8-8 3.582-8 8 8 10 8 10z"
+              />
+            </svg>
+            <span class="text-slate-700 font-medium">Navarra, España</span>
+          </div>
+        </div>
+
+        <form id="contact-form" class="flex flex-col gap-5">
+          <div class="grid md:grid-cols-2 gap-5">
+            <input
+              type="text"
+              name="user_name"
+              placeholder="Nombre"
+              class="neomorphic-input p-5 rounded-xl font-medium"
+              required
+            />
+            <input
+              type="email"
+              name="user_email"
+              placeholder="Email"
+              class="neomorphic-input p-5 rounded-xl font-medium"
+              required
+            />
+          </div>
+          <input
+            type="tel"
+            name="user_phone"
+            placeholder="Número de teléfono (opcional)"
+            class="neomorphic-input p-5 rounded-xl font-medium"
+          />
+          <input
+            type="text"
+            name="subject"
+            placeholder="Asunto"
+            class="neomorphic-input p-5 rounded-xl font-medium"
+          />
+          <textarea
+            name="message"
+            placeholder="¿Qué necesitas exactamente?"
+            class="neomorphic-input p-5 rounded-xl font-medium min-h-[160px]"
+          ></textarea>
+          <label class="text-sm flex items-start gap-2">
+            <input type="checkbox" required />
+            <span>
+              Acepto la
+              <a href="legal/privacidad.html" class="underline"
+                >política de privacidad</a
+              >
+            </span>
+          </label>
+          <div class="text-center mt-6">
+            <button
+              type="submit"
+              class="px-16 py-5 btn-brutal rounded-2xl text-xl font-bold active:scale-95"
+            >
+              Enviar Mensaje
+            </button>
+          </div>
+        </form>
+      </div>
+    </section>
+
+    <footer class="bg-gray-900 text-white text-center py-6">
+      <p>&copy; 2026 Zaldicode</p>
+      <div class="mt-2 space-x-4 text-sm">
+        <a href="#hero">Inicio</a>
+        <a href="legal/aviso-legal.html">Aviso legal</a>
+        <a href="legal/privacidad.html">Privacidad</a>
+        <a href="legal/cookies.html">Cookies</a>
+      </div>
+    </footer>
+
+    <!-- COOKIE BANNER -->
+    <div
+      id="cookie-banner"
+      class="fixed bottom-0 left-0 w-full bg-gray-900 text-white p-4 z-50"
+    >
+      <p class="text-sm mb-2">
+        Utilizamos cookies propias y de terceros para fines técnicos y, con tu
+        consentimiento, de análisis.
+      </p>
+
+      <div class="flex flex-wrap gap-2">
+        <button id="accept-cookies" class="bg-green-500 px-4 py-2 rounded">
+          Aceptar
+        </button>
+        <button id="reject-cookies" class="bg-red-500 px-4 py-2 rounded">
+          Rechazar
+        </button>
+        <a href="legal/cookies.html" class="underline text-sm"
+          >Más información</a
+        >
+      </div>
+    </div>
+
+    <!-- Botón WhatsApp flotante -->
+    <a
+      href="https://wa.me/34697769609"
+      target="_blank"
+      class="group fixed bottom-6 right-6 z-50 transition-transform hover:scale-110"
+    >
+      <div
+        class="absolute right-full top-1/2 mr-4 -translate-y-1/2 rounded-xl bg-white px-5 py-2.5 shadow-xl transition-all duration-300 pointer-events-none opacity-0 group-hover:opacity-100 group-hover:-translate-x-2"
+      >
+        <p class="whitespace-nowrap text-sm font-medium text-gray-800">
+          ¿En qué puedo ayudarte?
+        </p>
+
+        <div
+          class="absolute top-1/2 -right-2 -translate-y-1/2 border-t-8 border-b-8 border-l-8 border-t-transparent border-b-transparent border-l-white"
+        ></div>
+      </div>
+
+      <div
+        class="flex h-16 w-16 items-center justify-center rounded-full bg-green-500 shadow-lg"
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 448 512"
+          class="h-9 w-9 text-white fill-current"
+        >
+          <path
+            d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zm-157 341.6c-33.1 0-65.6-8.9-93.9-25.7l-6.7-4-69.8 18.3L72 359.2l-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-5.5-2.8-23.4-8.6-44.6-27.6-16.5-14.7-27.6-32.8-30.8-38.4-3.2-5.6-.3-8.6 2.5-11.4 2.5-2.5 5.5-6.5 8.3-9.7 2.8-3.2 3.7-5.5 5.5-9.2 1.9-3.7.9-6.9-.5-9.7-1.4-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 13.2 5.8 23.5 9.2 31.6 11.8 13.3 4.2 25.4 3.6 35 2.2 10.7-1.5 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-3.9-10.5-6.6z"
+          />
+        </svg>
+      </div>
+    </a>
+  </body>
+</html>

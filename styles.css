@@ -1,0 +1,269 @@
+/* =========================================
+   FUENTES Y BASE
+========================================= */
+body {
+  font-family: "DM Sans", sans-serif;
+  background-color: #f0fdf4; /* Menta Glacial */
+  color: #1e293b; /* Texto Pizarra Profunda */
+  margin: 0;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* =========================================
+   HEADER: Tarjeta flotante con Glassmorphism
+========================================= */
+.floating-nav {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(5px);
+  border: 1px solid #e2e8f0;
+  box-shadow:
+    0 4px 6px -1px rgba(0, 0, 0, 0.05),
+    0 2px 4px -1px rgba(0, 0, 0, 0.03);
+}
+
+/* =========================================
+   ANIMACIONES
+========================================= */
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.animate-slide-up {
+  animation: slideUp 0.8s ease-out forwards;
+}
+
+@keyframes pulse {
+  50% {
+    opacity: 0.3;
+  }
+}
+.animate-pulse {
+  animation: pulse 1.5s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+/* =========================================
+   TARJETAS TÁCTILES
+========================================= */
+.tactile-card {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+  box-shadow: 2px 2px 0px rgba(30, 41, 59, 0.05);
+}
+
+.tactile-card:hover {
+  transform: translate(-4px, -4px);
+  box-shadow: 8px 8px 0px rgba(249, 115, 22, 0.1); /* Sombra Naranja suave */
+  border-color: #f97316; /* Borde Naranja */
+}
+
+/* Evita efecto hover en tarjetas de contacto */
+#contacto .tactile-card:hover {
+  transform: none;
+  box-shadow: 2px 2px 0px rgba(30, 41, 59, 0.05);
+  border-color: #e2e8f0;
+}
+
+/* Tarjeta terminal hero */
+#hero .tactile-card {
+  background: #0f172a; /* Azul casi negro */
+  border-color: #1e293b;
+}
+
+/* =========================================
+   BOTONES
+========================================= */
+.btn-brutal {
+  background-color: #f97316; /* Naranja Eléctrico */
+  color: #ffffff;
+  transition: all 0.2s ease;
+  box-shadow: 3px 3px 0px #1e293b; /* Sombra sólida Pizarra */
+  display: inline-block;
+  text-align: center;
+}
+
+.btn-brutal:hover {
+  transform: translate(1px, 1px);
+  box-shadow: 1px 1px 0px #1e293b;
+}
+
+/* =========================================
+   INPUTS NEOMÓRFICOS
+========================================= */
+.neomorphic-input {
+  background: #f0fdf4;
+  border: 1px solid #e2e8f0;
+  box-shadow: inset 2px 2px 4px rgba(0, 0, 0, 0.03);
+  transition: all 0.3s ease;
+}
+
+.neomorphic-input:focus {
+  border-color: #f97316;
+  background: #ffffff;
+  box-shadow: 0 0 0 3px rgba(249, 115, 22, 0.1);
+  outline: none;
+}
+
+/* =========================================
+   SCROLLBAR PERSONALIZADO
+========================================= */
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: #f0fdf4;
+}
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 5px;
+  border: 2px solid #f0fdf4;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #f97316;
+}
+
+/* =========================================
+   BADGE / TERMINAL CODE
+========================================= */
+.code-badge {
+  background: #1e293b;
+  color: #38bdf8;
+  padding: 1rem;
+  border-radius: 12px;
+  font-family: "Courier New", Courier, monospace;
+  font-size: 0.8rem;
+  box-shadow: 4px 4px 0px #000;
+  border: 1px solid #334155;
+}
+.code-line::before {
+  content: "> ";
+  color: #f97316;
+}
+
+/* =========================================
+   FOOTER: enlaces legales hover subrayado
+========================================= */
+footer a[href^="legal/"],
+footer a[href="#hero"],
+footer a[href="../index.html"],
+footer a[href="aviso-legal.html"],
+footer a[href="cookies.html"],
+footer a[href="privacidad.html"] {
+  position: relative;
+  text-decoration: none;
+  color: inherit;
+}
+
+footer a[href^="legal/"]::after,
+footer a[href="#hero"]::after,
+footer a[href="../index.html"]::after,
+footer a[href="aviso-legal.html"]::after,
+footer a[href="cookies.html"]::after,
+footer a[href="privacidad.html"]::after {
+  content: "";
+  position: absolute;
+  width: 0%;
+  height: 2px;
+  bottom: -2px;
+  left: 0;
+  background-color: #f97316;
+  transition: width 0.3s ease;
+}
+
+footer a[href^="legal/"]:hover::after,
+footer a[href="#hero"]:hover::after,
+footer a[href="../index.html"]:hover::after,
+footer a[href="aviso-legal.html"]:hover::after,
+footer a[href="cookies.html"]:hover:after,
+footer a[href="privacidad.html"]:hover::after {
+  width: 100%;
+}
+
+/* =========================================
+   FORMULARIO CONTACTO: hover para política de privacidad
+========================================= */
+#contacto a[href="legal/privacidad.html"] {
+  text-decoration: underline;
+  color: #1e293b;
+  transition: color 0.3s ease;
+}
+
+#contacto a[href="legal/privacidad.html"]:hover {
+  color: #f97316;
+}
+
+/* =========================================
+   PÁGINAS LEGALES
+========================================= */
+.legal-page,
+body.legal {
+  font-family: "DM Sans", system-ui, sans-serif;
+  background-color: #ffffff;
+  color: #334155; /* slate-700 */
+}
+
+.legal-container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 140px 20px 80px;
+}
+
+.legal-container h1 {
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: #0f172a; /* slate-900 */
+  margin-bottom: 20px;
+  letter-spacing: -0.02em;
+}
+
+.legal-container h2 {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #0f172a;
+  margin-top: 40px;
+  margin-bottom: 10px;
+}
+
+.legal-container p {
+  color: #475569; /* slate-600 */
+  margin-bottom: 16px;
+  line-height: 1.7;
+}
+
+.legal-container ul {
+  padding-left: 20px;
+  margin-bottom: 16px;
+}
+
+.legal-container li {
+  margin-bottom: 8px;
+}
+
+.legal-container a {
+  color: #ea580c; /* orange-600 */
+  font-weight: 500;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.legal-container a:hover {
+  text-decoration: underline;
+}
+
+.back-home {
+  display: inline-block;
+  margin-bottom: 30px;
+  font-size: 0.9rem;
+  color: #ea580c;
+  font-weight: 600;
+}
+
+.legal-container section {
+  margin-bottom: 30px;
+}
