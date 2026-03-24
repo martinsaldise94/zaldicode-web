@@ -43,7 +43,6 @@ document.addEventListener("DOMContentLoaded", function () {
     localStorage.setItem("cookiesChoice", "accepted");
     banner.style.display = "none";
 
-    // Aquí cargarías cookies opcionales (analytics, etc)
   };
 
   document.getElementById("reject-cookies").onclick = () => {
