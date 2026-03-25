@@ -26,7 +26,7 @@ Para garantizar un rendimiento de 100/100 y una carga ultrarrápida, he utilizad
 ## 🚀 Despliegue
 
 La web está desplegada y puedes verla en vivo aquí:
-👉 [TU-URL-DE-GITHUB-PAGES-AQUÍ]
+👉 [pendiente de actualizar]
 
 ---
 
