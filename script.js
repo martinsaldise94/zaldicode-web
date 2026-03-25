@@ -16,10 +16,10 @@ document
 
     Promise.all([
       // Email para mi
-      emailjs.sendForm("service_yvhos5h", "template_sshmyhr", this),
+      emailjs.sendForm("service_1nksoma", "template_sshmyhr", this),
 
       // Email automático al cliente
-      emailjs.sendForm("service_yvhos5h", "template_kqrq4hp", this),
+      emailjs.sendForm("service_1nksoma", "template_kqrq4hp", this),
     ])
       .then(() => {
         alert("Mensaje enviado correctamente");
@@ -42,7 +42,6 @@ document.addEventListener("DOMContentLoaded", function () {
   document.getElementById("accept-cookies").onclick = () => {
     localStorage.setItem("cookiesChoice", "accepted");
     banner.style.display = "none";
-
   };
 
   document.getElementById("reject-cookies").onclick = () => {
