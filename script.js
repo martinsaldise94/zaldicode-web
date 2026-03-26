@@ -1,5 +1,5 @@
 console.log(
-  "%c ZALDICODE %c ¿Buscando cómo está hecha? Hablemos de tu proyecto: zaldicode@gmail.com",
+  "%c ZALDICODE %c ¿Buscando cómo está hecha? Hablemos de tu proyecto: info@zaldicode.com",
   "background: #f97316; color: white; font-weight: bold; padding: 4px 8px; border-radius: 4px;",
   "color: #f97316; font-weight: bold;",
 );
@@ -48,4 +48,22 @@ document.addEventListener("DOMContentLoaded", function () {
     localStorage.setItem("cookiesChoice", "rejected");
     banner.style.display = "none";
   };
+});
+
+
+const menuBtn = document.getElementById('menu-btn');
+const menuLinks = document.getElementById('menu-links');
+
+menuBtn.addEventListener('click', () => {
+  menuLinks.classList.toggle('hidden');
+  menuLinks.classList.toggle('flex');
+});
+
+// Cerrar el menú al hacer clic en un enlace 
+menuLinks.querySelectorAll('a').forEach(link => {
+  link.addEventListener('click', () => {
+    if (window.innerWidth < 768) {
+      menuLinks.classList.add('hidden');
+    }
+  });
 });
