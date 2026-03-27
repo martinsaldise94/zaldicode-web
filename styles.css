@@ -218,3 +218,15 @@ footer a:hover::after {
   margin-bottom: 30px;
   font-size: 0.9rem;
 }
+
+/* animación de apariciones */
+.fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
