@@ -1,6 +1,11 @@
-
-.docker/
-*.log
+# OS
 Thumbs.db
 .DS_Store
-node_modules/
+
+# Editor
+*.swp
+*.swo
+*~
+
+# Cleanup script (temporary)
+cleanup.bat

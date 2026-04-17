@@ -14,6 +14,19 @@
     />
     <link rel="canonical" href="https://zaldicode.com/" />
 
+    <!-- Security Headers -->
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://cdn.tailwindcss.com https://cdn.jsdelivr.net; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; img-src 'self' https: data:; font-src 'self' https://fonts.gstatic.com; connect-src 'self' https://api.emailjs.com; frame-ancestors 'none';"
+    />
+    <meta
+      http-equiv="Strict-Transport-Security"
+      content="max-age=31536000; includeSubDomains; preload"
+    />
+    <meta http-equiv="X-Content-Type-Options" content="nosniff" />
+    <meta http-equiv="X-Frame-Options" content="SAMEORIGIN" />
+    <meta http-equiv="X-XSS-Protection" content="1; mode=block" />
+
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://zaldicode.com/" />
     <meta
@@ -62,10 +75,12 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="styles.css" />
 
-    <script
-      src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"
-      defer
-    ></script>
+    <!-- Seguridad: DOMPurify para sanitización XSS -->
+    <script src="https://cdn.jsdelivr.net/npm/dompurify@3.2.4/dist/purify.min.js"></script>
+
+    <!-- EmailJS SDK para envío de formulario -->
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+
     <script src="script.js" defer></script>
   </head>
   <body class="antialiased">
@@ -115,8 +130,8 @@
             <a
               href="#servicios"
               class="block px-4 py-2 rounded-lg hover:bg-orange-50 transition"
-              >Servicios </a
-            >
+              >Servicios
+            </a>
           </li>
           <li>
             <a
@@ -648,6 +663,12 @@
         </div>
 
         <form id="contact-form" class="flex flex-col gap-5">
+          <div id="form-errors" class="hidden p-4 bg-red-50 border border-red-200 rounded-lg">
+            <div class="text-red-800 text-sm space-y-1" id="error-list"></div>
+          </div>
+          <div id="form-success" class="hidden p-4 bg-green-50 border border-green-200 rounded-lg">
+            <div class="text-green-800 text-sm font-medium">✓ Mensaje enviado correctamente.</div>
+          </div>
           <div class="grid md:grid-cols-2 gap-5">
             <input
               type="text"
@@ -677,12 +698,13 @@
             class="neomorphic-input p-5 rounded-xl font-medium"
           />
           <textarea
+            id="message"
             name="message"
             placeholder="¿Qué necesitas exactamente?"
             class="neomorphic-input p-5 rounded-xl font-medium min-h-[160px]"
           ></textarea>
           <label class="text-sm flex items-start gap-2">
-            <input type="checkbox" required />
+            <input type="checkbox" id="privacy-check" required />
             <span>
               Acepto la
               <a href="legal/privacidad.html" class="underline"
@@ -693,10 +715,14 @@
           <div class="text-center mt-6">
             <button
               type="submit"
+              id="submit-btn"
               class="px-16 py-5 btn-brutal rounded-2xl text-xl font-bold active:scale-95"
             >
               Enviar Mensaje
             </button>
+            <div id="loading-spinner" class="hidden mt-3">
+              <div class="flex justify-center"><div class="animate-spin">⏳</div></div>
+            </div>
           </div>
         </form>
       </div>
