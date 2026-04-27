@@ -1,5 +1,3 @@
-
-
 // =============================================
 // 1. INICIALIZACIÓN EMAILJS (con protecciones)
 // =============================================
@@ -58,7 +56,9 @@ if (form) {
 
     // Verificar que EmailJS está disponible
     if (typeof emailjs === "undefined") {
-      showErrors(["Error: el servicio de envío no está disponible. Contacta directamente a info@zaldicode.com"]);
+      showErrors([
+        "Error: el servicio de envío no está disponible. Contacta directamente a info@zaldicode.com",
+      ]);
       isSubmitting = false;
       showLoading(false);
       return;
@@ -77,11 +77,15 @@ if (form) {
         console.error("[EMAILJS_ERROR]", error);
 
         if (error && error.status === 429) {
-          showErrors(["Demasiados intentos. Espera unos segundos e intenta de nuevo."]);
+          showErrors([
+            "Demasiados intentos. Espera unos segundos e intenta de nuevo.",
+          ]);
         } else if (error && error.status === 451) {
           showErrors(["Envío bloqueado por seguridad."]);
         } else {
-          showErrors(["Error al enviar el mensaje. Intenta de nuevo o escribe a info@zaldicode.com"]);
+          showErrors([
+            "Error al enviar el mensaje. Intenta de nuevo o escribe a info@zaldicode.com",
+          ]);
         }
       })
       .finally(function () {
@@ -142,7 +146,11 @@ function showErrors(errors) {
     return;
   }
 
-  list.innerHTML = errors.map(function (e) { return "<div>• " + sanitize(e) + "</div>"; }).join("");
+  list.innerHTML = errors
+    .map(function (e) {
+      return "<div>• " + sanitize(e) + "</div>";
+    })
+    .join("");
   container.classList.remove("hidden");
   container.scrollIntoView({ behavior: "smooth", block: "nearest" });
 }
@@ -204,19 +212,33 @@ document.addEventListener("DOMContentLoaded", function () {
 // =============================================
 var menuBtn = document.getElementById("menu-btn");
 var menuLinks = document.getElementById("menu-links");
+var hamburgerIcon = menuBtn ? menuBtn.querySelector(".hamburger-icon") : null;
+
+function closeMenu() {
+  menuLinks.classList.add("hidden");
+  menuLinks.classList.remove("flex");
+  if (hamburgerIcon) hamburgerIcon.classList.remove("open");
+  menuBtn.setAttribute("aria-expanded", "false");
+  menuBtn.setAttribute("aria-label", "Abrir menú de navegación");
+}
+
+function openMenu() {
+  menuLinks.classList.remove("hidden");
+  menuLinks.classList.add("flex");
+  if (hamburgerIcon) hamburgerIcon.classList.add("open");
+  menuBtn.setAttribute("aria-expanded", "true");
+  menuBtn.setAttribute("aria-label", "Cerrar menú de navegación");
+}
 
 if (menuBtn && menuLinks) {
   menuBtn.addEventListener("click", function () {
-    menuLinks.classList.toggle("hidden");
-    menuLinks.classList.toggle("flex");
+    var isOpen = !menuLinks.classList.contains("hidden");
+    isOpen ? closeMenu() : openMenu();
   });
 
   menuLinks.querySelectorAll("a").forEach(function (link) {
     link.addEventListener("click", function () {
-      if (window.innerWidth < 768) {
-        menuLinks.classList.add("hidden");
-        menuLinks.classList.remove("flex");
-      }
+      if (window.innerWidth < 768) closeMenu();
     });
   });
 }
@@ -232,7 +254,7 @@ var observer = new IntersectionObserver(
       }
     });
   },
-  { threshold: 0.1 }
+  { threshold: 0.1 },
 );
 
 document.querySelectorAll(".fade-in").forEach(function (el) {
@@ -245,5 +267,5 @@ document.querySelectorAll(".fade-in").forEach(function (el) {
 console.log(
   "%c ZALDICODE %c ¿Buscando cómo está hecha? Hablemos de tu proyecto: info@zaldicode.com",
   "background: #f97316; color: white; font-weight: bold; padding: 4px 8px; border-radius: 4px;",
-  "color: #f97316; font-weight: bold;"
+  "color: #f97316; font-weight: bold;",
 );
