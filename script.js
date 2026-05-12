@@ -32,6 +32,12 @@ if (form) {
 
     if (isSubmitting) return;
 
+    // Honeypot anti-spam: si viene relleno, es un bot
+    if (form.elements["honeypot"] && form.elements["honeypot"].value !== "") {
+      form.reset();
+      return;
+    }
+
     // Obtener datos
     var formData = new FormData(form);
     var data = {
