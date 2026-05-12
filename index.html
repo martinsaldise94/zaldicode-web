@@ -97,7 +97,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700;900&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
       rel="stylesheet"
     />
 
@@ -408,48 +408,128 @@
       <!-- Sobre mi -->
       <section
         id="sobre-mi"
-        class="py-20 bg-white fade-in"
+        class="py-24 bg-white fade-in"
         aria-labelledby="heading-sobre-mi"
       >
         <div
-          class="max-w-6xl mx-auto px-4 flex flex-col md:flex-row items-center gap-8"
+          class="max-w-6xl mx-auto px-6 flex flex-col md:flex-row items-center gap-16"
         >
           <!-- FOTO -->
-          <div class="md:w-1/3">
-            <img
-              src="assets/desarrollo-web-navarra-martin-zaldicode.webp"
-              alt="Martín Saldise, desarrollador web en Navarra — fundador de Zaldicode, empresa de desarrollo de software"
-              class="rounded-full shadow-lg w-64 h-64 object-cover mx-auto md:mx-0 fade-in"
-              width="256"
-              height="256"
-              loading="lazy"
-              decoding="async"
-            />
+          <div class="md:w-2/5 flex justify-center md:justify-start shrink-0">
+            <div class="relative">
+              <div
+                class="absolute -inset-3 rounded-3xl bg-orange-100 -rotate-3"
+              ></div>
+              <img
+                src="assets/desarrollo-web-navarra-martin-zaldicode.webp"
+                alt="Martín Saldise, desarrollador web en Navarra — fundador de Zaldicode, empresa de desarrollo de software"
+                class="relative rounded-2xl shadow-xl w-72 h-72 object-cover"
+                width="288"
+                height="288"
+                loading="eager"
+                decoding="async"
+              />
+            </div>
           </div>
 
           <!-- TEXTO -->
-          <div class="md:w-2/3 fade-in">
-            <h2 id="heading-sobre-mi" class="text-3xl font-bold mb-4">
-              Sobre mí — Desarrollador de Software en Navarra
+          <div class="md:w-3/5">
+            <span
+              class="inline-block text-xs font-bold uppercase tracking-widest text-orange-500 mb-4"
+              >Sobre mí</span
+            >
+            <h2
+              id="heading-sobre-mi"
+              class="text-4xl font-extrabold text-slate-900 tracking-tighter mb-6 leading-tight"
+            >
+              Desarrollador de Software en Navarra
             </h2>
-            <p class="mb-4">
+            <p class="mb-4 text-slate-600 leading-relaxed">
               Soy Martín, Desarrollador de Software en Navarra con un
-              <strong>background en ciencia</strong> que define mi forma de
-              trabajar: con rigor, análisis y precisión técnica.
+              <strong class="text-slate-900">background en ciencia</strong> que
+              define mi forma de trabajar: con rigor, análisis y precisión
+              técnica.
             </p>
+            <p class="mb-4 text-slate-600 leading-relaxed">
+              Aplico una mentalidad analítica para transformar problemas
+              complejos en soluciones digitales simples que funcionan. Mi
+              objetivo es que tu tecnología sea un activo, no un dolor de
+              cabeza.
+            </p>
+            <p class="mb-8 text-slate-600 leading-relaxed">
+              Si buscas algo que no solo sea estético, sino
+              <strong class="text-slate-900"
+                >optimizado bajo estándares superiores</strong
+              >
+              y enfocado a resultados reales, estás en el lugar adecuado.
+            </p>
+            <a
+              href="#contacto"
+              class="inline-block px-8 py-4 btn-brutal rounded-xl font-bold text-sm uppercase tracking-widest"
+            >
+              Cuéntame tu proyecto
+            </a>
+          </div>
+        </div>
+      </section>
 
-            <p class="mb-4">
-              No solo diseño páginas web; aplico una mentalidad analítica para
-              transformar problemas complejos en soluciones digitales simples
-              que funcionan. Mi objetivo es que tu tecnología sea un activo, no
-              un dolor de cabeza.
-            </p>
+      <!-- Stack tecnológico -->
+      <section
+        class="py-16 bg-slate-50 border-t border-slate-100 fade-in"
+        aria-label="Stack tecnológico"
+      >
+        <div class="max-w-6xl mx-auto px-6">
+          <p
+            class="text-xs font-bold uppercase tracking-widest text-slate-400 text-center mb-10"
+          >
+            Tecnologías con las que trabajo
+          </p>
+          <div class="flex flex-wrap justify-center gap-3">
+            <!-- Frontend -->
+            <span
+              class="px-4 py-2 rounded-xl bg-white border border-slate-200 text-sm font-semibold text-slate-700 shadow-sm"
+              >JavaScript</span
+            >
+            <span
+              class="px-4 py-2 rounded-xl bg-white border border-slate-200 text-sm font-semibold text-slate-700 shadow-sm"
+              >React</span
+            >
+            <span
+              class="px-4 py-2 rounded-xl bg-white border border-slate-200 text-sm font-semibold text-slate-700 shadow-sm"
+              >Next.js</span
+            >
+            <span
+              class="px-4 py-2 rounded-xl bg-white border border-slate-200 text-sm font-semibold text-slate-700 shadow-sm"
+              >Tailwind CSS</span
+            >
+            <!-- Backend -->
+            <span
+              class="px-4 py-2 rounded-xl bg-white border border-slate-200 text-sm font-semibold text-slate-700 shadow-sm"
+              >Python</span
+            >
+            <span
+              class="px-4 py-2 rounded-xl bg-white border border-slate-200 text-sm font-semibold text-slate-700 shadow-sm"
+              >Node.js</span
+            >
+            <span
+              class="px-4 py-2 rounded-xl bg-white border border-slate-200 text-sm font-semibold text-slate-700 shadow-sm"
+              >Django</span
+            >
+            <!-- Datos / BD -->
+            <span
+              class="px-4 py-2 rounded-xl bg-white border border-slate-200 text-sm font-semibold text-slate-700 shadow-sm"
+              >PostgreSQL</span
+            >
 
-            <p class="mb-4">
-              Si buscas una web que no solo sea estética, sino que esté
-              <strong>optimizada bajo estándares superiores</strong> y enfocada
-              a resultados reales, estás en el lugar adecuado.
-            </p>
+            <!-- Herramientas -->
+            <span
+              class="px-4 py-2 rounded-xl bg-white border border-slate-200 text-sm font-semibold text-slate-700 shadow-sm"
+              >Git / GitHub</span
+            >
+            <span
+              class="px-4 py-2 rounded-xl bg-white border border-slate-200 text-sm font-semibold text-slate-700 shadow-sm"
+              >Docker</span
+            >
           </div>
         </div>
       </section>
@@ -479,10 +559,10 @@
           <div class="grid md:grid-cols-3 gap-8">
             <!-- Diseño web -->
             <div
-              class="tactile-card p-10 rounded-3xl group hover:-translate-y-2 transition-transform duration-300"
+              class="tactile-card p-8 rounded-3xl group hover:-translate-y-2 transition-transform duration-300 flex flex-col"
             >
               <div
-                class="w-14 h-14 rounded-2xl flex items-center justify-center mb-8 text-white"
+                class="w-14 h-14 rounded-2xl flex items-center justify-center mb-6 text-white shrink-0"
                 style="background: linear-gradient(135deg, #f97316, #fb923c)"
               >
                 <svg
@@ -500,19 +580,50 @@
                   />
                 </svg>
               </div>
-              <h3 class="text-2xl font-bold text-slate-900 mb-4 tracking-tight">
+              <h3 class="text-xl font-bold text-slate-900 mb-2 tracking-tight">
                 Diseño web profesional
               </h3>
-              <p class="text-slate-700 leading-relaxed text-[15px]">
-                Webs modernas, rápidas y optimizadas para convertir visitantes
-                en clientes.
+              <p class="text-slate-500 text-sm mb-4 leading-relaxed">
+                Web moderna, rápida y optimizada para que tus clientes te
+                encuentren y contacten.
               </p>
+              <ul class="text-sm text-slate-600 space-y-1.5 mb-6 flex-1">
+                <li class="flex items-start gap-2">
+                  <span class="text-orange-500 font-bold shrink-0">✓</span
+                  >Diseño responsive (móvil, tablet y escritorio)
+                </li>
+                <li class="flex items-start gap-2">
+                  <span class="text-orange-500 font-bold shrink-0">✓</span>SEO
+                  técnico y velocidad de carga optimizada
+                </li>
+                <li class="flex items-start gap-2">
+                  <span class="text-orange-500 font-bold shrink-0">✓</span
+                  >Formulario de contacto funcional
+                </li>
+                <li class="flex items-start gap-2">
+                  <span class="text-orange-500 font-bold shrink-0">✓</span
+                  >Páginas legales incluidas (aviso, privacidad, cookies)
+                </li>
+                <li class="flex items-start gap-2">
+                  <span class="text-orange-500 font-bold shrink-0">✓</span
+                  >Entrega lista para publicar con dominio y hosting
+                </li>
+              </ul>
+              <div class="pt-4 border-t border-slate-100">
+                <span
+                  class="text-xs font-bold uppercase tracking-widest text-slate-400"
+                  >Desde</span
+                >
+                <p class="text-2xl font-extrabold text-slate-900">700 €</p>
+              </div>
             </div>
 
             <!-- Tiendas online -->
-            <div class="tactile-card p-10 rounded-3xl group">
+            <div
+              class="tactile-card p-8 rounded-3xl group hover:-translate-y-2 transition-transform duration-300 flex flex-col"
+            >
               <div
-                class="w-14 h-14 rounded-2xl flex items-center justify-center mb-8 text-white"
+                class="w-14 h-14 rounded-2xl flex items-center justify-center mb-6 text-white shrink-0"
                 style="background: linear-gradient(135deg, #f97316, #fb923c)"
               >
                 <svg
@@ -530,19 +641,49 @@
                   />
                 </svg>
               </div>
-              <h3 class="text-2xl font-bold text-slate-900 mb-4 tracking-tight">
+              <h3 class="text-xl font-bold text-slate-900 mb-2 tracking-tight">
                 Tiendas online
               </h3>
-              <p class="text-slate-700 leading-relaxed text-[15px]">
-                E-commerce optimizado para vender más, con experiencia de
-                usuario intuitiva y clara.
+              <p class="text-slate-500 text-sm mb-4 leading-relaxed">
+                Infraestructura de e-commerce completa y personalizada para
+                vender online desde el primer día.
               </p>
+              <ul class="text-sm text-slate-600 space-y-1.5 mb-6 flex-1">
+                <li class="flex items-start gap-2">
+                  <span class="text-orange-500 font-bold shrink-0">✓</span
+                  >Diseño y desarrollo totalmente a medida
+                </li>
+                <li class="flex items-start gap-2">
+                  <span class="text-orange-500 font-bold shrink-0">✓</span
+                  >Gestión de productos, categorías e inventario
+                </li>
+                <li class="flex items-start gap-2">
+                  <span class="text-orange-500 font-bold shrink-0">✓</span
+                  >Pasarela de pago integrada (tarjeta, Bizum, etc.)
+                </li>
+                <li class="flex items-start gap-2">
+                  <span class="text-orange-500 font-bold shrink-0">✓</span>Panel
+                  de administración intuitivo
+                </li>
+                <li class="flex items-start gap-2">
+                  <span class="text-orange-500 font-bold shrink-0">✓</span>SEO
+                  optimizado para productos y categorías
+                </li>
+              </ul>
+              <div class="pt-4 border-t border-slate-100">
+                <span
+                  class="text-xs font-bold uppercase tracking-widest text-slate-400"
+                  >Presupuesto personalizado</span
+                >
+              </div>
             </div>
 
             <!-- Apps personalizadas -->
-            <div class="tactile-card p-10 rounded-3xl group">
+            <div
+              class="tactile-card p-8 rounded-3xl group hover:-translate-y-2 transition-transform duration-300 flex flex-col"
+            >
               <div
-                class="w-14 h-14 rounded-2xl flex items-center justify-center mb-8 text-white"
+                class="w-14 h-14 rounded-2xl flex items-center justify-center mb-6 text-white shrink-0"
                 style="background: linear-gradient(135deg, #f97316, #fb923c)"
               >
                 <svg
@@ -560,20 +701,49 @@
                   />
                 </svg>
               </div>
-              <h3 class="text-2xl font-bold text-slate-900 mb-4 tracking-tight">
+              <h3 class="text-xl font-bold text-slate-900 mb-2 tracking-tight">
                 Apps personalizadas
               </h3>
-              <p class="text-slate-700 leading-relaxed text-[15px]">
-                Aplicaciones hechas a medida. Cuéntame tu idea y la transformaré
-                en una solución funcional.
+              <p class="text-slate-500 text-sm mb-4 leading-relaxed">
+                Aplicaciones web a medida para resolver necesidades concretas
+                que las herramientas genéricas no cubren.
               </p>
+              <ul class="text-sm text-slate-600 space-y-1.5 mb-6 flex-1">
+                <li class="flex items-start gap-2">
+                  <span class="text-orange-500 font-bold shrink-0">✓</span
+                  >Dashboards y paneles de control internos
+                </li>
+                <li class="flex items-start gap-2">
+                  <span class="text-orange-500 font-bold shrink-0">✓</span
+                  >Herramientas de gestión para equipos y empresas
+                </li>
+                <li class="flex items-start gap-2">
+                  <span class="text-orange-500 font-bold shrink-0">✓</span
+                  >Aplicaciones web con autenticación y roles
+                </li>
+                <li class="flex items-start gap-2">
+                  <span class="text-orange-500 font-bold shrink-0">✓</span
+                  >Scripts y utilidades de automatización
+                </li>
+                <li class="flex items-start gap-2">
+                  <span class="text-orange-500 font-bold shrink-0">✓</span
+                  >Integraciones con APIs externas
+                </li>
+              </ul>
+              <div class="pt-4 border-t border-slate-100">
+                <span
+                  class="text-xs font-bold uppercase tracking-widest text-slate-400"
+                  >Presupuesto personalizado</span
+                >
+              </div>
             </div>
 
             <!-- Bases de datos -->
-
-            <div class="tactile-card p-10 rounded-3xl group">
+            <div
+              class="tactile-card p-8 rounded-3xl group hover:-translate-y-2 transition-transform duration-300 flex flex-col"
+            >
               <div
-                class="w-14 h-14 rounded-2xl flex items-center justify-center mb-8 text-white"
+                class="w-14 h-14 rounded-2xl flex items-center justify-center mb-6 text-white shrink-0"
                 style="background: linear-gradient(135deg, #f97316, #fb923c)"
               >
                 <svg
@@ -591,20 +761,49 @@
                   />
                 </svg>
               </div>
-              <h3 class="text-2xl font-bold text-slate-900 mb-4 tracking-tight">
+              <h3 class="text-xl font-bold text-slate-900 mb-2 tracking-tight">
                 Bases de datos
               </h3>
-              <p class="text-slate-700 leading-relaxed text-[15px]">
-                Soluciones con análisis y estadísticas personalizadas para tu
-                negocio.
+              <p class="text-slate-500 text-sm mb-4 leading-relaxed">
+                Diseño, organización y explotación de tus datos para tomar
+                mejores decisiones de negocio.
               </p>
+              <ul class="text-sm text-slate-600 space-y-1.5 mb-6 flex-1">
+                <li class="flex items-start gap-2">
+                  <span class="text-orange-500 font-bold shrink-0">✓</span
+                  >Diseño y modelado de base de datos
+                </li>
+                <li class="flex items-start gap-2">
+                  <span class="text-orange-500 font-bold shrink-0">✓</span
+                  >Paneles de estadísticas y métricas personalizadas
+                </li>
+                <li class="flex items-start gap-2">
+                  <span class="text-orange-500 font-bold shrink-0">✓</span
+                  >Exportación e importación de datos
+                </li>
+                <li class="flex items-start gap-2">
+                  <span class="text-orange-500 font-bold shrink-0">✓</span
+                  >Integración con otras herramientas y plataformas
+                </li>
+                <li class="flex items-start gap-2">
+                  <span class="text-orange-500 font-bold shrink-0">✓</span
+                  >Optimización de consultas y rendimiento
+                </li>
+              </ul>
+              <div class="pt-4 border-t border-slate-100">
+                <span
+                  class="text-xs font-bold uppercase tracking-widest text-slate-400"
+                  >Presupuesto personalizado</span
+                >
+              </div>
             </div>
 
             <!-- Automatización -->
-
-            <div class="tactile-card p-10 rounded-3xl group">
+            <div
+              class="tactile-card p-8 rounded-3xl group hover:-translate-y-2 transition-transform duration-300 flex flex-col"
+            >
               <div
-                class="w-14 h-14 rounded-2xl flex items-center justify-center mb-8 text-white"
+                class="w-14 h-14 rounded-2xl flex items-center justify-center mb-6 text-white shrink-0"
                 style="background: linear-gradient(135deg, #f97316, #fb923c)"
               >
                 <svg
@@ -622,19 +821,49 @@
                   />
                 </svg>
               </div>
-              <h3 class="text-2xl font-bold text-slate-900 mb-4 tracking-tight">
+              <h3 class="text-xl font-bold text-slate-900 mb-2 tracking-tight">
                 Automatización y soluciones digitales
               </h3>
-              <p class="text-slate-700 leading-relaxed text-[15px]">
-                Optimizo procesos y creo herramientas que ahorran tiempo y
-                mejoran resultados.
+              <p class="text-slate-500 text-sm mb-4 leading-relaxed">
+                Elimina tareas repetitivas y conecta tus herramientas para que
+                tu negocio funcione solo.
               </p>
+              <ul class="text-sm text-slate-600 space-y-1.5 mb-6 flex-1">
+                <li class="flex items-start gap-2">
+                  <span class="text-orange-500 font-bold shrink-0">✓</span
+                  >Automatización de envíos de email y notificaciones
+                </li>
+                <li class="flex items-start gap-2">
+                  <span class="text-orange-500 font-bold shrink-0">✓</span
+                  >Scraping y extracción de datos web
+                </li>
+                <li class="flex items-start gap-2">
+                  <span class="text-orange-500 font-bold shrink-0">✓</span
+                  >Conexión entre herramientas y plataformas (APIs)
+                </li>
+                <li class="flex items-start gap-2">
+                  <span class="text-orange-500 font-bold shrink-0">✓</span
+                  >Generación automática de informes
+                </li>
+                <li class="flex items-start gap-2">
+                  <span class="text-orange-500 font-bold shrink-0">✓</span>Bots
+                  y scripts de proceso por lotes
+                </li>
+              </ul>
+              <div class="pt-4 border-t border-slate-100">
+                <span
+                  class="text-xs font-bold uppercase tracking-widest text-slate-400"
+                  >Presupuesto personalizado</span
+                >
+              </div>
             </div>
 
-            <!-- Y más -->
-            <div class="tactile-card p-10 rounded-3xl group">
+            <!-- Soluciones personalizadas -->
+            <div
+              class="tactile-card p-8 rounded-3xl group hover:-translate-y-2 transition-transform duration-300 flex flex-col"
+            >
               <div
-                class="w-14 h-14 rounded-2xl flex items-center justify-center mb-8 text-white"
+                class="w-14 h-14 rounded-2xl flex items-center justify-center mb-6 text-white shrink-0"
                 style="background: linear-gradient(135deg, #f97316, #fb923c)"
               >
                 <svg
@@ -648,18 +877,47 @@
                     stroke-linecap="round"
                     stroke-linejoin="round"
                     stroke-width="1.5"
-                    d="M20 12h-2M6 12H4M12 4v2M12 18v2"
+                    d="M11 4a2 2 0 114 0v1a1 1 0 001 1h3a1 1 0 011 1v3a1 1 0 01-1 1h-1a2 2 0 100 4h1a1 1 0 011 1v3a1 1 0 01-1 1h-3a1 1 0 01-1-1v-1a2 2 0 10-4 0v1a1 1 0 01-1 1H7a1 1 0 01-1-1v-3a1 1 0 00-1-1H4a2 2 0 110-4h1a1 1 0 001-1V7a1 1 0 011-1h3a1 1 0 001-1V4z"
                   />
                 </svg>
               </div>
-              <h3 class="text-2xl font-bold text-slate-900 mb-4 tracking-tight">
-                Y más...
+              <h3 class="text-xl font-bold text-slate-900 mb-2 tracking-tight">
+                Soluciones personalizadas
               </h3>
-              <p class="text-slate-700 leading-relaxed text-[15px]">
-                Me adapto a tus necesidades para ofrecer el mejor producto
-                digital posible.
+              <p class="text-slate-500 text-sm mb-4 leading-relaxed">
+                Los servicios anteriores son solo ejemplos. Si tienes un
+                problema concreto que resolver, cuéntamelo y buscaremos juntos
+                la mejor solución técnica para tu caso.
               </p>
+              <ul class="text-sm text-slate-600 space-y-1.5 mb-6 flex-1">
+                <li class="flex items-start gap-2">
+                  <span class="text-orange-500 font-bold shrink-0">✓</span
+                  >Análisis del problema antes de proponer solución
+                </li>
+                <li class="flex items-start gap-2">
+                  <span class="text-orange-500 font-bold shrink-0">✓</span
+                  >Propuesta técnica adaptada a tu presupuesto
+                </li>
+                <li class="flex items-start gap-2">
+                  <span class="text-orange-500 font-bold shrink-0">✓</span>Sin
+                  compromisos hasta que estés de acuerdo
+                </li>
+              </ul>
+              <div class="pt-4 border-t border-slate-100">
+                <span
+                  class="text-xs font-bold uppercase tracking-widest text-slate-400"
+                  >Cuéntame tu caso</span
+                >
+              </div>
             </div>
+          </div>
+          <div class="text-center mt-16">
+            <a
+              href="#contacto"
+              class="px-10 py-4 btn-brutal rounded-xl font-bold text-sm uppercase tracking-widest"
+            >
+              Pedir presupuesto sin compromiso
+            </a>
           </div>
         </div>
       </section>
@@ -670,10 +928,8 @@
         class="py-24 px-6 bg-orange-50/50 fade-in"
         aria-labelledby="heading-valor"
       >
-        <div
-          class="max-w-6xl mx-auto grid md:grid-cols-[1fr,1.5fr] gap-16 items-start"
-        >
-          <div class="md:sticky md:top-28">
+        <div class="max-w-6xl mx-auto">
+          <div class="mb-12 max-w-2xl">
             <h2
               id="heading-valor"
               class="text-4xl font-extrabold text-slate-900 tracking-tighter mb-4"
@@ -689,67 +945,119 @@
             </p>
           </div>
 
-          <div class="space-y-6">
+          <div class="grid md:grid-cols-2 gap-6">
+            <!-- 01 -->
             <div
-              class="group tactile-card p-6 rounded-2xl flex items-center gap-6 border-l-4 border-l-orange-500"
+              class="group tactile-card p-6 rounded-2xl flex items-start gap-6 border-l-4 border-l-orange-500"
             >
               <div
-                class="text-4xl font-black text-orange-500 group-hover:text-orange-400 transition"
+                class="text-4xl font-black text-orange-500 group-hover:text-orange-400 transition shrink-0 leading-none pt-1"
               >
                 01
               </div>
-              <p class="text-lg font-semibold text-slate-800">
-                Webs rápidas y optimizadas.
-              </p>
+              <div>
+                <p class="text-lg font-bold text-slate-900 mb-1">
+                  Rendimiento real, no solo promesas.
+                </p>
+                <p class="text-sm text-slate-600 leading-relaxed">
+                  Cada entrega pasa por revisión técnica de rendimiento y
+                  calidad. Código limpio, sistemas rápidos y soluciones que
+                  aguantan el crecimiento de tu negocio sin romperse por el
+                  camino.
+                </p>
+              </div>
             </div>
+            <!-- 02 -->
             <div
-              class="group tactile-card p-6 rounded-2xl flex items-center gap-6 border-l-4 border-l-orange-500"
+              class="group tactile-card p-6 rounded-2xl flex items-start gap-6 border-l-4 border-l-orange-500"
             >
               <div
-                class="text-4xl font-black text-orange-500 group-hover:text-orange-400 transition"
+                class="text-4xl font-black text-orange-500 group-hover:text-orange-400 transition shrink-0 leading-none pt-1"
               >
                 02
               </div>
-              <p class="text-lg font-semibold text-slate-800">
-                Diseño enfocado a resultados.
-              </p>
+              <div>
+                <p class="text-lg font-bold text-slate-900 mb-1">
+                  Software orientado a resultados, no a funcionalidades.
+                </p>
+                <p class="text-sm text-slate-600 leading-relaxed">
+                  Antes de desarrollar, entiendo qué problema necesitas
+                  resolver. El objetivo no es añadir features, sino que la
+                  solución tenga un impacto real y medible en tu operativa o en
+                  tus ingresos.
+                </p>
+              </div>
             </div>
+            <!-- 03 -->
             <div
-              class="group tactile-card p-6 rounded-2xl flex items-center gap-6 border-l-4 border-l-orange-500"
+              class="group tactile-card p-6 rounded-2xl flex items-start gap-6 border-l-4 border-l-orange-500"
             >
               <div
-                class="text-4xl font-black text-orange-500 group-hover:text-orange-400 transition"
+                class="text-4xl font-black text-orange-500 group-hover:text-orange-400 transition shrink-0 leading-none pt-1"
               >
                 03
               </div>
-              <p class="text-lg font-semibold text-slate-800">
-                Soluciones adaptadas a cada negocio.
-              </p>
+              <div>
+                <p class="text-lg font-bold text-slate-900 mb-1">
+                  A medida de tu negocio, no al revés.
+                </p>
+                <p class="text-sm text-slate-600 leading-relaxed">
+                  Analizo tu sector y tus procesos antes de escribir una línea
+                  de código. El resultado es una herramienta que encaja
+                  exactamente en cómo trabajas, no una plantilla que tienes que
+                  adaptar tú.
+                </p>
+              </div>
             </div>
+            <!-- 04 -->
             <div
-              class="group tactile-card p-6 rounded-2xl flex items-center gap-6 border-l-4 border-l-orange-500"
+              class="group tactile-card p-6 rounded-2xl flex items-start gap-6 border-l-4 border-l-orange-500"
             >
               <div
-                class="text-4xl font-black text-orange-500 group-hover:text-orange-400 transition"
+                class="text-4xl font-black text-orange-500 group-hover:text-orange-400 transition shrink-0 leading-none pt-1"
               >
                 04
               </div>
-              <p class="text-lg font-semibold text-slate-800">
-                Comunicación directa y sin complicaciones.
-              </p>
+              <div>
+                <p class="text-lg font-bold text-slate-900 mb-1">
+                  Trato directo, sin intermediarios.
+                </p>
+                <p class="text-sm text-slate-600 leading-relaxed">
+                  Hablas directamente con la persona que desarrolla tu proyecto.
+                  Sin cuentas de ventas, sin malentendidos entre departamentos.
+                  Sabes en todo momento en qué punto está tu trabajo.
+                </p>
+              </div>
             </div>
+            <!-- 05 -->
             <div
-              class="group tactile-card p-6 rounded-2xl flex items-center gap-6 border-l-4 border-l-orange-500"
+              class="group tactile-card p-6 rounded-2xl flex items-start gap-6 border-l-4 border-l-orange-500"
             >
               <div
-                class="text-4xl font-black text-orange-500 group-hover:text-orange-400 transition"
+                class="text-4xl font-black text-orange-500 group-hover:text-orange-400 transition shrink-0 leading-none pt-1"
               >
                 05
               </div>
-              <p class="text-lg font-semibold text-slate-800">
-                Facilidades para negocios en creación.
-              </p>
+              <div>
+                <p class="text-lg font-bold text-slate-900 mb-1">
+                  Flexible si estás empezando.
+                </p>
+                <p class="text-sm text-slate-600 leading-relaxed">
+                  Si tienes un negocio en creación, nos adaptamos a tu
+                  presupuesto y crecemos juntos. Puedes empezar con lo esencial
+                  y ampliar cuando lo necesites, sin pagar por lo que aún no
+                  usas.
+                </p>
+              </div>
             </div>
+          </div>
+          <div class="text-center mt-12">
+            <a
+              href="#contacto"
+              class="px-10 py-4 btn-brutal rounded-xl font-bold text-sm uppercase tracking-widest"
+            >
+              Hablemos de tu proyecto
+            </a>
           </div>
         </div>
       </section>
@@ -775,6 +1083,170 @@
           >
             Estoy trabajando en nuevos proyectos que mostraré aquí próximamente.
           </p>
+        </div>
+      </section>
+
+      <!-- FAQ -->
+      <section
+        id="faq"
+        class="py-20 px-6 bg-slate-50 border-t border-slate-100 fade-in"
+        aria-labelledby="heading-faq"
+      >
+        <div class="max-w-2xl mx-auto">
+          <p
+            class="text-xs font-bold uppercase tracking-widest text-orange-500 mb-3"
+          >
+            FAQ
+          </p>
+          <h2
+            id="heading-faq"
+            class="text-4xl font-extrabold text-slate-900 tracking-tighter mb-10"
+          >
+            Preguntas frecuentes
+          </h2>
+
+          <div class="flex flex-col gap-3" id="faq-list">
+            <details
+              class="group bg-white border border-slate-200 rounded-2xl overflow-hidden"
+            >
+              <summary
+                class="flex items-center justify-between px-6 py-4 cursor-pointer font-semibold text-slate-900 list-none select-none"
+              >
+                ¿Cuánto cuesta hacer una web?
+                <span
+                  class="ml-4 shrink-0 text-orange-500 transition-transform duration-200 group-open:rotate-45"
+                  >＋</span
+                >
+              </summary>
+              <p class="px-6 pb-5 text-sm text-slate-500 leading-relaxed">
+                Depende del alcance del proyecto. Una web informativa de calidad
+                suele partir de <strong>700 €</strong>, mientras que proyectos
+                con panel de administración, lógica a medida o integraciones
+                complejas pueden superar esa cifra. Siempre hago un presupuesto
+                cerrado antes de empezar para que no haya sorpresas.
+              </p>
+            </details>
+
+            <details
+              class="group bg-white border border-slate-200 rounded-2xl overflow-hidden"
+            >
+              <summary
+                class="flex items-center justify-between px-6 py-4 cursor-pointer font-semibold text-slate-900 list-none select-none"
+              >
+                ¿Cuánto tiempo tarda en estar lista?
+                <span
+                  class="ml-4 shrink-0 text-orange-500 transition-transform duration-200 group-open:rotate-45"
+                  >＋</span
+                >
+              </summary>
+              <p class="px-6 pb-5 text-sm text-slate-500 leading-relaxed">
+                Una web corporativa sencilla puede estar lista en
+                <strong>2–3 semanas</strong>. Los proyectos más complejos
+                (tiendas online, plataformas, dashboards) suelen llevar entre 4
+                y 8 semanas. El plazo exacto se acuerda en el presupuesto y lo
+                cumplo.
+              </p>
+            </details>
+
+            <details
+              class="group bg-white border border-slate-200 rounded-2xl overflow-hidden"
+            >
+              <summary
+                class="flex items-center justify-between px-6 py-4 cursor-pointer font-semibold text-slate-900 list-none select-none"
+              >
+                ¿Trabajas con clientes de fuera de Navarra?
+                <span
+                  class="ml-4 shrink-0 text-orange-500 transition-transform duration-200 group-open:rotate-45"
+                  >＋</span
+                >
+              </summary>
+              <p class="px-6 pb-5 text-sm text-slate-500 leading-relaxed">
+                Sí, trabajo <strong>100% en remoto</strong> con clientes de toda
+                España. Las reuniones se hacen por videollamada y el proceso
+                está pensado para que sea fluido sin importar dónde estés.
+              </p>
+            </details>
+
+            <!-- Preguntas ocultas inicialmente -->
+            <div id="faq-extra" class="flex flex-col gap-3 hidden">
+              <details
+                class="group bg-white border border-slate-200 rounded-2xl overflow-hidden"
+              >
+                <summary
+                  class="flex items-center justify-between px-6 py-4 cursor-pointer font-semibold text-slate-900 list-none select-none"
+                >
+                  ¿Qué necesito para empezar?
+                  <span
+                    class="ml-4 shrink-0 text-orange-500 transition-transform duration-200 group-open:rotate-45"
+                    >＋</span
+                  >
+                </summary>
+                <p class="px-6 pb-5 text-sm text-slate-500 leading-relaxed">
+                  Solo necesito que me cuentes qué quieres conseguir. Con una
+                  primera llamada o mensaje ya puedo hacerme una idea del
+                  proyecto y preparar un presupuesto. No hace falta que tengas
+                  nada preparado de antemano.
+                </p>
+              </details>
+
+              <details
+                class="group bg-white border border-slate-200 rounded-2xl overflow-hidden"
+              >
+                <summary
+                  class="flex items-center justify-between px-6 py-4 cursor-pointer font-semibold text-slate-900 list-none select-none"
+                >
+                  ¿Haces mantenimiento y soporte después de entregar el
+                  proyecto?
+                  <span
+                    class="ml-4 shrink-0 text-orange-500 transition-transform duration-200 group-open:rotate-45"
+                    >＋</span
+                  >
+                </summary>
+                <p class="px-6 pb-5 text-sm text-slate-500 leading-relaxed">
+                  Sí. Ofrezco soporte puntual y planes de mantenimiento para que
+                  tu web esté siempre actualizada y segura. Si lo necesitas,
+                  podemos acordarlo al cerrar el proyecto.
+                </p>
+              </details>
+
+              <details
+                class="group bg-white border border-slate-200 rounded-2xl overflow-hidden"
+              >
+                <summary
+                  class="flex items-center justify-between px-6 py-4 cursor-pointer font-semibold text-slate-900 list-none select-none"
+                >
+                  ¿Puedo pedirte cambios durante el desarrollo?
+                  <span
+                    class="ml-4 shrink-0 text-orange-500 transition-transform duration-200 group-open:rotate-45"
+                    >＋</span
+                  >
+                </summary>
+                <p class="px-6 pb-5 text-sm text-slate-500 leading-relaxed">
+                  Por supuesto. Trabajo de forma iterativa y con comunicación
+                  directa, así que los ajustes durante el proceso son
+                  bienvenidos. Los cambios de alcance grandes se valoran aparte,
+                  pero los ajustes normales están incluidos.
+                </p>
+              </details>
+            </div>
+
+            <!-- Botón ver más -->
+            <button
+              id="faq-toggle"
+              onclick="
+                (function () {
+                  var x = document.getElementById('faq-extra');
+                  var b = document.getElementById('faq-toggle');
+                  var open = !x.classList.contains('hidden');
+                  x.classList.toggle('hidden', open);
+                  b.textContent = open ? 'Ver más preguntas ↓' : 'Ver menos ↑';
+                })()
+              "
+              class="mt-1 self-center text-sm font-semibold text-orange-500 hover:text-orange-600 transition"
+            >
+              Ver más preguntas ↓
+            </button>
+          </div>
         </div>
       </section>
 
@@ -856,6 +1328,21 @@
           </div>
 
           <form id="contact-form" class="flex flex-col gap-5">
+            <!-- Honeypot anti-spam: los bots lo rellenan, los humanos no lo ven -->
+            <input
+              type="text"
+              name="honeypot"
+              tabindex="-1"
+              autocomplete="off"
+              aria-hidden="true"
+              style="
+                position: absolute;
+                left: -9999px;
+                width: 1px;
+                height: 1px;
+                opacity: 0;
+              "
+            />
             <div
               id="form-errors"
               class="hidden p-4 bg-red-50 border border-red-200 rounded-lg"
@@ -993,23 +1480,36 @@
     <!-- COOKIE BANNER -->
     <div
       id="cookie-banner"
-      class="fixed bottom-0 left-0 w-full bg-gray-900 text-white p-4 z-50"
+      class="fixed bottom-4 left-1/2 -translate-x-1/2 w-[95%] max-w-2xl z-50 bg-slate-100 border border-slate-300 rounded-2xl shadow-2xl px-6 py-5 flex flex-col sm:flex-row items-start sm:items-center gap-4"
     >
-      <p class="text-sm mb-2">
-        Utilizamos cookies propias y de terceros para fines técnicos y, con tu
-        consentimiento, de análisis.
-      </p>
-
-      <div class="flex flex-wrap gap-2">
-        <button id="accept-cookies" class="bg-green-500 px-4 py-2 rounded">
-          Aceptar
-        </button>
-        <button id="reject-cookies" class="bg-red-500 px-4 py-2 rounded">
+      <div class="flex-1">
+        <p class="text-sm font-semibold text-slate-900 mb-0.5">
+          Usamos cookies 🍪
+        </p>
+        <p class="text-xs text-slate-500 leading-relaxed">
+          Utilizamos cookies propias y de terceros para fines técnicos y, con tu
+          consentimiento, de análisis.
+          <a
+            href="legal/cookies.html"
+            class="text-orange-500 hover:underline font-medium"
+            >Más información</a
+          >
+        </p>
+      </div>
+      <div class="flex gap-2 shrink-0">
+        <button
+          id="reject-cookies"
+          class="px-4 py-2 text-sm font-semibold text-slate-600 bg-slate-100 hover:bg-slate-200 rounded-xl transition"
+        >
           Rechazar
         </button>
-        <a href="legal/cookies.html" class="underline text-sm"
-          >Más información</a
+        <button
+          id="accept-cookies"
+          class="px-4 py-2 text-sm font-bold text-white rounded-xl transition"
+          style="background: #f97316; box-shadow: 2px 2px 0px #1e293b"
         >
+          Aceptar
+        </button>
       </div>
     </div>
 
@@ -1018,33 +1518,34 @@
       href="https://wa.me/34697769609?text=Hola%20Martín,%20he%20visto%20tu%20web%20y%20quiero%20información."
       target="_blank"
       rel="noopener noreferrer"
-      class="group fixed bottom-6 right-6 z-50 transition-transform hover:scale-110"
+      class="group fixed bottom-6 right-6 z-50 flex items-center gap-3"
       aria-label="Contactar por WhatsApp con Zaldicode"
     >
       <div
-        class="absolute right-full top-1/2 mr-4 -translate-y-1/2 rounded-xl bg-white px-5 py-2.5 shadow-xl transition-all duration-300 pointer-events-none opacity-0 group-hover:opacity-100 group-hover:-translate-x-2"
+        class="hidden md:block rounded-xl bg-white px-4 py-2.5 shadow-xl border border-slate-100 transition-all duration-300 group-hover:shadow-2xl group-hover:-translate-x-1"
       >
-        <p class="whitespace-nowrap text-sm font-medium text-gray-800">
-          ¿En qué puedo ayudarte?
+        <p class="whitespace-nowrap text-sm font-semibold text-gray-800">
+          ¿Hablamos por WhatsApp?
         </p>
-
-        <div
-          class="absolute top-1/2 -right-2 -translate-y-1/2 border-t-8 border-b-8 border-l-8 border-t-transparent border-b-transparent border-l-white"
-        ></div>
       </div>
 
-      <div
-        class="flex h-16 w-16 items-center justify-center rounded-full bg-green-500 shadow-lg"
-      >
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          viewBox="0 0 448 512"
-          class="h-9 w-9 text-white fill-current"
+      <div class="relative shrink-0">
+        <span
+          class="absolute inset-0 rounded-full bg-green-400 opacity-60 animate-ping"
+        ></span>
+        <div
+          class="relative flex h-16 w-16 items-center justify-center rounded-full bg-green-500 shadow-xl transition-transform duration-200 group-hover:scale-110"
         >
-          <path
-            d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zm-157 341.6c-33.1 0-65.6-8.9-93.9-25.7l-6.7-4-69.8 18.3L72 359.2l-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-5.5-2.8-23.4-8.6-44.6-27.6-16.5-14.7-27.6-32.8-30.8-38.4-3.2-5.6-.3-8.6 2.5-11.4 2.5-2.5 5.5-6.5 8.3-9.7 2.8-3.2 3.7-5.5 5.5-9.2 1.9-3.7.9-6.9-.5-9.7-1.4-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 13.2 5.8 23.5 9.2 31.6 11.8 13.3 4.2 25.4 3.6 35 2.2 10.7-1.5 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-3.9-10.5-6.6z"
-          />
-        </svg>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 448 512"
+            class="h-9 w-9 text-white fill-current"
+          >
+            <path
+              d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zm-157 341.6c-33.1 0-65.6-8.9-93.9-25.7l-6.7-4-69.8 18.3L72 359.2l-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-5.5-2.8-23.4-8.6-44.6-27.6-16.5-14.7-27.6-32.8-30.8-38.4-3.2-5.6-.3-8.6 2.5-11.4 2.5-2.5 5.5-6.5 8.3-9.7 2.8-3.2 3.7-5.5 5.5-9.2 1.9-3.7.9-6.9-.5-9.7-1.4-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 13.2 5.8 23.5 9.2 31.6 11.8 13.3 4.2 25.4 3.6 35 2.2 10.7-1.5 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-3.9-10.5-6.6z"
+            />
+          </svg>
+        </div>
       </div>
     </a>
   </body>
