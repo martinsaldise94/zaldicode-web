@@ -4,6 +4,3 @@ Allow: /
 
 # Sitemap
 Sitemap: https://zaldicode.com/sitemap.xml
-
-# Crawl-delay (optional, respectful)
-Crawl-delay: 1

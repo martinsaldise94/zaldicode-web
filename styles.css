@@ -5,12 +5,15 @@
   /* ── Colores de marca — Zapier design system ── */
   --color-primary: #ff4f00; /* Zapier orange — CTAs, acentos */
   --color-primary-dark: #d94500; /* variante oscura */
-  --color-primary-ring: rgba(255, 79, 0, 0.12); /* halo de foco / hover */
+  --color-primary-light: #ff6a26; /* variante clara — hover activo */
+  --color-primary-ring: rgba(255, 79, 0, 0.14); /* halo de foco / hover */
+  --color-primary-bg: rgba(255, 79, 0, 0.06); /* fondo tenue en hover de nav */
 
   /* ── Fondos — canvas cálido ── */
   --color-bg: #fffefb; /* canvas — fondo global */
   --color-bg-soft: #f8f4f0; /* canvas-soft — cards, inputs */
   --color-surface: #fffefb; /* canvas — superficie principal */
+  --color-surface-hover: #f4f0eb; /* hover sutil en cards */
   --color-surface-dark: #201515; /* ink — terminal hero, legal headings */
 
   /* ── Texto — coffee ink ── */
@@ -21,54 +24,119 @@
   /* ── Bordes ── */
   --color-border: #c5c0b1; /* mute — bordes por defecto */
   --color-border-mid: #939084; /* body-mid — scrollbar thumb */
+  --color-border-focus: var(--color-primary); /* borde en foco */
 
   /* ── Código / terminal ── */
   --color-code-bg: #201515; /* ink */
   --color-code-text: #f8f4f0; /* canvas-soft */
   --color-code-border: #36342e; /* ink-mid */
+  --color-code-comment: #6b7280;
+  --color-code-accent: #ff6a26; /* strings / keywords */
 
-  /* ── Sombras — elevación limpia, sin brutal offset ── */
+  /* ── Sombras — elevación limpia ── */
   --shadow-brutal: 0 2px 8px rgba(32, 21, 21, 0.18);
   --shadow-brutal-sm: 0 1px 4px rgba(32, 21, 21, 0.1);
   --shadow-card: 0 1px 3px rgba(32, 21, 21, 0.08);
-  --shadow-card-hover: 0 8px 24px rgba(32, 21, 21, 0.14);
-  --shadow-code: 0 4px 12px rgba(0, 0, 0, 0.3);
+  --shadow-card-hover: 0 8px 28px rgba(32, 21, 21, 0.13);
+  --shadow-code: 0 4px 16px rgba(0, 0, 0, 0.28);
+  --shadow-nav:
+    0 4px 16px rgba(32, 21, 21, 0.08), 0 1px 3px rgba(32, 21, 21, 0.05);
+  --shadow-btn: 0 2px 8px rgba(255, 79, 0, 0.28);
+  --shadow-btn-hover: 0 6px 20px rgba(255, 79, 0, 0.36);
+
+  /* ── Transiciones — escala unificada ── */
+  --transition-fast: 140ms ease;
+  --transition-base: 240ms ease;
+  --transition-slow: 360ms cubic-bezier(0.34, 1.56, 0.64, 1); /* spring */
+
+  /* ── Radios — escala de curvatura ── */
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 20px;
+  --radius-xl: 28px;
+  --radius-pill: 9999px;
+
+  /* ── Layout ── */
+  --nav-height: 72px; /* altura del floating nav */
+  --content-max: 1152px; /* max-w-6xl */
+
+  /* ── Z-index — capas de apilamiento ── */
+  --z-base: 0;
+  --z-overlay: 40;
+  --z-nav: 50;
+  --z-modal: 60;
 }
 
 /* ============================================
    BASE
    ============================================ */
+
+/* box-sizing global — evita overflows inesperados */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* html recibe el mismo canvas para que el overscroll no quede blanco */
+html {
+  background-color: var(--color-bg);
+  scroll-behavior: smooth;
+}
+
 body {
   font-family:
     "Inter",
     system-ui,
     -apple-system,
     sans-serif;
+  /* body-sm del DESIGN.md: 16px / 400 / line-height 1.5 */
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
   background-color: var(--color-bg);
   color: var(--color-text);
   margin: 0;
   -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
 }
 
 /* ============================================
    HEADER Y NAVEGACIÓN
    ============================================ */
+
+/* nav-bar del DESIGN.md: canvas cálido, no blanco puro */
 .floating-nav {
-  background: rgba(255, 255, 255, 0.95);
-  backdrop-filter: blur(5px);
+  background: rgba(255, 254, 251, 0.96); /* --color-bg con opacidad */
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
   border: 1px solid var(--color-border);
-  box-shadow:
-    0 4px 6px -1px rgba(0, 0, 0, 0.05),
-    0 2px 4px -1px rgba(0, 0, 0, 0.03);
+  box-shadow: var(--shadow-nav);
+  transition: box-shadow var(--transition-base);
+}
+
+/* nav-link hover: fondo tenue en primary-bg, sin agresividad */
+.floating-nav a:not(.btn-brutal):hover {
+  background-color: var(--color-primary-bg);
+  color: var(--color-primary-dark);
+}
+
+/* estado activo del nav-link (añadido desde JS con .active) */
+.floating-nav a.active:not(.btn-brutal) {
+  color: var(--color-primary);
+  font-weight: 600;
 }
 
 /* ============================================
    ANIMACIONES
    ============================================ */
+
+/* slideUp — entrada del hero: desplazamiento reducido, duración más corta */
 @keyframes slideUp {
   from {
     opacity: 0;
-    transform: translateY(15px);
+    transform: translateY(10px); /* antes: 15px — menos dramático */
   }
   to {
     opacity: 1;
@@ -76,150 +144,372 @@ body {
   }
 }
 
+.animate-slide-up {
+  animation: slideUp 0.5s ease-out forwards; /* antes: 0.8s */
+}
+
+/* pulse — parpadeo del indicador "System Ready" en la terminal:
+   opacidad mínima más alta (0.5) para que no sea tan agresivo */
 @keyframes pulse {
   50% {
-    opacity: 0.3;
+    opacity: 0.5; /* antes: 0.3 */
   }
 }
 
-.animate-slide-up {
-  animation: slideUp 0.8s ease-out forwards;
-}
 .animate-pulse {
-  animation: pulse 1.5s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  animation: pulse 2s ease-in-out infinite; /* antes: 1.5s */
 }
 
 /* ============================================
    TARJETAS TÁCTILES
    ============================================ */
+
+/* card-content del DESIGN.md: canvas-soft, rounded.md (12px), padding xl */
 .tactile-card {
-  background: var(--color-surface);
+  background: var(--color-bg-soft);
   border: 1px solid var(--color-border);
-  transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+  border-radius: var(--radius-md);
   box-shadow: var(--shadow-card);
+  transition:
+    transform var(--transition-slow),
+    box-shadow var(--transition-base),
+    border-color var(--transition-base),
+    background-color var(--transition-base);
 }
 
 .tactile-card:hover {
-  transform: translateY(-3px);
+  transform: translateY(-4px);
   box-shadow: var(--shadow-card-hover);
-  border-color: var(--color-border);
+  border-color: var(--color-border-mid);
+  background-color: var(--color-surface-hover);
 }
 
-/* tarjeta terminal hero */
+/* tarjeta terminal hero — card-feature-dark: ink fill, sin hover lift */
 #hero .tactile-card {
   background: var(--color-surface-dark);
-  border-color: var(--color-code-bg);
+  border-color: var(--color-code-border);
 }
 
-/* reset hover contacto */
+#hero .tactile-card:hover {
+  transform: none;
+  background: var(--color-surface-dark);
+  box-shadow: var(--shadow-code);
+}
+
+/* reset hover contacto — no lift, solo borde sutil */
 #contacto .tactile-card:hover {
   transform: none;
   box-shadow: var(--shadow-card);
-  border-color: var(--color-border);
+  border-color: var(--color-border-mid);
+  background-color: var(--color-bg-soft);
 }
 
 /* ============================================
-   BOTONES BRUTALISTAS
+   BOTONES
    ============================================ */
+
+/* button-primary del DESIGN.md:
+   bg primary (#ff4f00), text on-primary (#fffefb),
+   rounded.md (12px), button-md (18px/600) */
 .btn-brutal {
   background-color: var(--color-primary);
-  color: var(--color-surface);
-  transition: all 0.2s ease;
-  box-shadow: var(--shadow-brutal);
+  color: var(--color-bg); /* on-primary = canvas cálido, no blanco puro */
+  font-size: 1rem;
+  font-weight: 700;
+  line-height: 1.5;
+  letter-spacing: 0.01em;
   display: inline-block;
   text-align: center;
-  border-radius: 12px; /* rounded.md — Zapier signature */
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-btn);
+  transition:
+    background-color var(--transition-fast),
+    box-shadow var(--transition-fast),
+    transform var(--transition-fast);
 }
 
 .btn-brutal:hover {
+  background-color: var(--color-primary-dark);
+  box-shadow: var(--shadow-btn-hover);
   transform: translateY(-1px);
-  box-shadow: var(--shadow-card-hover);
-  opacity: 0.93;
+}
+
+.btn-brutal:active {
+  background-color: var(--color-primary-dark);
+  box-shadow: var(--shadow-btn);
+  transform: translateY(0);
+}
+
+/* foco accesible — anillo naranja con offset */
+.btn-brutal:focus-visible {
+  outline: 3px solid var(--color-primary);
+  outline-offset: 3px;
+  box-shadow: 0 0 0 5px var(--color-primary-ring);
 }
 
 /* ============================================
+/* ============================================
    INPUTS DEL FORMULARIO
    ============================================ */
+
+/* text-input del DESIGN.md:
+   bg canvas, ink border, body-md (18px/400),
+   rounded.sm (6px), padding md/lg */
 .neomorphic-input {
-  background: var(--color-bg-soft);
+  background: var(--color-bg-soft); /* canvas-soft en reposo */
   border: 1px solid var(--color-border);
-  box-shadow: none;
-  transition: all 0.3s ease;
+  border-radius: var(--radius-sm); /* rounded.sm = 6px */
+  color: var(--color-text);
+  font-family: inherit;
+  font-size: 1rem;
+  line-height: 1.5;
+  transition:
+    border-color var(--transition-fast),
+    background-color var(--transition-fast),
+    box-shadow var(--transition-fast);
 }
 
-.neomorphic-input:focus {
-  border-color: var(--color-primary);
-  background: var(--color-surface);
+.neomorphic-input:hover {
+  border-color: var(--color-border-mid);
+}
+
+.neomorphic-input:focus,
+.neomorphic-input:focus-visible {
+  border-color: var(--color-border-focus);
+  background: var(--color-bg); /* canvas cálido en foco, no blanco puro */
   box-shadow: 0 0 0 3px var(--color-primary-ring);
   outline: none;
+}
+
+.neomorphic-input:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  background: var(--color-bg-soft);
+}
+
+/* estado de error visible */
+.neomorphic-input:user-invalid {
+  border-color: #c0392b;
+  box-shadow: 0 0 0 3px rgba(192, 57, 43, 0.12);
 }
 
 /* ============================================
    BARRA DE DESPLAZAMIENTO
    ============================================ */
+
+/* estándar moderno — Firefox y Chromium recientes */
+html {
+  scrollbar-width: thin;
+  scrollbar-color: var(--color-primary) var(--color-bg);
+}
+
+/* webkit — Chrome, Safari, Edge */
 ::-webkit-scrollbar {
-  width: 10px;
+  width: 6px;
 }
 ::-webkit-scrollbar-track {
   background: var(--color-bg);
 }
 ::-webkit-scrollbar-thumb {
-  background: var(--color-border-mid);
-  border-radius: 5px;
+  background: var(--color-primary);
+  border-radius: var(--radius-pill);
   border: 2px solid var(--color-bg);
+  transition: background var(--transition-fast);
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: var(--color-primary);
+  background: var(--color-primary-dark);
 }
 
 /* ============================================
    CÓDIGO Y BADGES DE TERMINAL
    ============================================ */
+
+/* card-feature-dark del DESIGN.md: ink fill, canvas-soft text */
 .code-badge {
   background: var(--color-code-bg);
   color: var(--color-code-text);
-  padding: 1rem;
-  border-radius: 12px;
-  font-family: "Courier New", Courier, monospace;
-  font-size: 0.8rem;
+  padding: 1.25rem 1.5rem;
+  border-radius: var(--radius-md);
+  font-family:
+    ui-monospace, "SFMono-Regular", "Cascadia Code", "Fira Code", Consolas,
+    monospace;
+  font-size: 0.875rem; /* 14px — caption del DESIGN.md */
+  line-height: 1.6;
   box-shadow: var(--shadow-code);
   border: 1px solid var(--color-code-border);
+  overflow-x: auto;
 }
 
+/* prompt prefix con color accent */
 .code-line::before {
   content: "> ";
-  color: var(--color-primary);
+  color: var(--color-code-accent); /* --color-primary-light */
+  font-weight: 700;
+  user-select: none;
 }
 
 /* ============================================
    FOOTER Y ENLACES
    ============================================ */
-footer a {
-  position: relative;
+
+/* footer del DESIGN.md: ink (#201515), canvas-soft text, body-sm,
+   padding 3xl/xl (48px / 24px) */
+.site-footer {
+  background-color: var(--color-surface-dark);
+  color: var(--color-bg-soft);
+  padding: 3rem 1.5rem 2rem;
+  /* espacio para que el cookie banner y el botón WA flotantes
+     no tapen los links legales de la barra inferior */
+  padding-bottom: 7rem;
+}
+
+@media (min-width: 768px) {
+  .site-footer {
+    padding-bottom: 6rem;
+  }
+}
+
+.site-footer__inner {
+  max-width: var(--content-max);
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2.5rem;
+}
+
+@media (min-width: 768px) {
+  .site-footer__inner {
+    grid-template-columns: 2fr 1fr 1fr;
+    gap: 3rem;
+  }
+}
+
+/* columna izquierda: logo + tagline */
+.site-footer__brand-name {
+  font-size: 1.25rem;
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  color: var(--color-bg);
+  margin: 0 0 0.5rem;
+}
+
+.site-footer__brand-name span {
+  color: var(--color-primary);
+}
+
+.site-footer__tagline {
+  font-size: 0.875rem;
+  line-height: 1.5;
+  color: var(--color-text-subtle);
+  margin: 0 0 1.25rem;
+  max-width: 22ch;
+}
+
+/* iconos sociales */
+.site-footer__social {
+  display: flex;
+  gap: 0.75rem;
+}
+
+.site-footer__social a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: var(--radius-sm);
+  background: rgba(255, 254, 251, 0.06);
+  color: var(--color-text-subtle);
   text-decoration: none;
-  color: inherit;
+  transition:
+    background-color var(--transition-fast),
+    color var(--transition-fast);
 }
 
-footer a::after {
-  content: "";
-  position: absolute;
-  width: 0%;
-  height: 2px;
-  bottom: -2px;
-  left: 0;
-  background-color: var(--color-primary);
-  transition: width 0.3s ease;
+.site-footer__social a:hover {
+  background: rgba(255, 79, 0, 0.15);
+  color: var(--color-primary);
 }
 
-footer a:hover::after {
-  width: 100%;
+/* columnas de navegación */
+.site-footer__col-title {
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-bg);
+  margin: 0 0 1rem;
+}
+
+.site-footer__links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.site-footer__links a {
+  font-size: 0.875rem;
+  color: var(--color-text-subtle);
+  text-decoration: none;
+  position: relative;
+  transition: color var(--transition-fast);
+}
+
+.site-footer__links a:hover {
+  color: var(--color-bg-soft);
+}
+
+/* barra inferior: divisor + copyright */
+.site-footer__bottom {
+  max-width: var(--content-max);
+  margin: 2.5rem auto 0;
+  padding-top: 1.5rem;
+  border-top: 1px solid rgba(255, 254, 251, 0.1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  text-align: center;
+}
+
+@media (min-width: 768px) {
+  .site-footer__bottom {
+    flex-direction: row;
+    justify-content: space-between;
+    text-align: left;
+  }
+}
+
+.site-footer__copyright {
+  font-size: 0.8125rem;
+  color: var(--color-text-subtle);
+  margin: 0;
+}
+
+.site-footer__legal {
+  display: flex;
+  gap: 1.25rem;
+}
+
+.site-footer__legal a {
+  font-size: 0.8125rem;
+  color: var(--color-text-subtle);
+  text-decoration: none;
+  transition: color var(--transition-fast);
+}
+
+.site-footer__legal a:hover {
+  color: var(--color-primary);
 }
 
 /* enlace privacidad dentro del formulario */
 #contacto a[href="legal/privacidad.html"] {
   text-decoration: underline;
   color: var(--color-text);
-  transition: color 0.3s ease;
+  transition: color var(--transition-fast);
 }
 
 #contacto a[href="legal/privacidad.html"]:hover {
@@ -229,57 +519,120 @@ footer a:hover::after {
 /* ============================================
    PÁGINAS LEGALES
    ============================================ */
+
+/* contenedor centrado — max 65ch para legibilidad óptima en prosa */
 .legal-container {
-  max-width: 900px;
+  max-width: 740px;
   margin: 0 auto;
-  padding: 140px 20px 80px;
+  /* desplazamiento por el nav flotante + respiración generosa */
+  padding: calc(var(--nav-height) + 4rem) 1.5rem 5rem;
 }
 
-.legal-container h1 {
-  font-size: 2.5rem;
-  font-weight: 800;
-  color: var(--color-surface-dark);
-  margin-bottom: 20px;
-  letter-spacing: -0.02em;
-}
-
-.legal-container h2 {
-  font-size: 1.4rem;
-  font-weight: 700;
-  color: var(--color-surface-dark);
-  margin-top: 40px;
-  margin-bottom: 10px;
-}
-
-.legal-container p {
-  color: var(--color-text-mid);
-  margin-bottom: 16px;
-  line-height: 1.7;
-}
-
-.legal-container ul {
-  padding-left: 20px;
-  margin-bottom: 16px;
-}
-.legal-container li {
-  margin-bottom: 8px;
-}
-
-.legal-container a,
+/* enlace de vuelta — tertiary button del DESIGN.md */
 .back-home {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4em;
+  margin-bottom: 2.5rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--color-text-mid);
+  text-decoration: none;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: 0.45rem 0.9rem;
+  transition:
+    color var(--transition-fast),
+    border-color var(--transition-fast),
+    background-color var(--transition-fast);
+}
+
+.back-home:hover {
+  color: var(--color-text);
+  border-color: var(--color-border-mid);
+  background-color: var(--color-bg-soft);
+}
+
+/* eyebrow de categoría — opcional, para futuras páginas */
+.legal-eyebrow {
+  display: inline-block;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-primary);
+  margin-bottom: 0.75rem;
+}
+
+/* display-md del DESIGN.md: 32px / 500 / -0.02em */
+.legal-container h1 {
+  font-size: clamp(1.75rem, 4vw, 2.25rem);
+  font-weight: 800;
+  color: var(--color-text);
+  margin: 0 0 0.5rem;
+  letter-spacing: -0.02em;
+  line-height: 1.15;
+}
+
+/* fecha de última actualización */
+.legal-container .legal-meta {
+  font-size: 0.8125rem;
+  color: var(--color-text-subtle);
+  margin-bottom: 2.5rem;
+  padding-bottom: 2.5rem;
+  border-bottom: 1px solid var(--color-border);
+}
+
+/* display-xs del DESIGN.md: 20px / 700 */
+.legal-container h2 {
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: var(--color-text);
+  margin: 2.5rem 0 0.6rem;
+  padding-top: 2.5rem;
+  border-top: 1px solid var(--color-border);
+  letter-spacing: -0.01em;
+}
+
+/* eliminar el borde del primer h2 — ya hay separador visual del meta */
+.legal-container h2:first-of-type {
+  border-top: none;
+  padding-top: 0;
+  margin-top: 0;
+}
+
+/* body-md del DESIGN.md: 18px / 400 / 1.6 */
+.legal-container p {
+  font-size: 1rem;
+  color: var(--color-text-mid);
+  margin-bottom: 1rem;
+  line-height: 1.65;
+}
+
+.legal-container ul,
+.legal-container ol {
+  padding-left: 1.4rem;
+  margin-bottom: 1rem;
+  color: var(--color-text-mid);
+}
+
+.legal-container li {
+  margin-bottom: 0.4rem;
+  line-height: 1.6;
+}
+
+/* enlaces en prosa — naranja oscuro, subrayado al hover */
+.legal-container a {
   color: var(--color-primary-dark);
   font-weight: 600;
   text-decoration: none;
-  transition: color 0.3s ease;
+  transition: color var(--transition-fast);
 }
 
 .legal-container a:hover {
+  color: var(--color-primary);
   text-decoration: underline;
-}
-.back-home {
-  display: inline-block;
-  margin-bottom: 30px;
-  font-size: 0.9rem;
+  text-underline-offset: 3px;
 }
 
 /* ============================================
@@ -297,14 +650,16 @@ footer a:hover::after {
   display: block;
   width: 100%;
   height: 2px;
-  background-color: var(--color-primary-dark);
-  border-radius: 2px;
+  background-color: var(--color-text);
+  border-radius: var(--radius-pill);
   transition:
-    transform 0.3s ease,
-    opacity 0.3s ease;
+    transform var(--transition-base),
+    opacity var(--transition-base),
+    background-color var(--transition-fast);
   transform-origin: center;
 }
 
+/* animación X al abrir — offset preciso para height: 16px */
 .hamburger-icon.open span:nth-child(1) {
   transform: translateY(7px) rotate(45deg);
 }
@@ -318,18 +673,59 @@ footer a:hover::after {
   transform: translateY(-7px) rotate(-45deg);
 }
 
+/* menú desplegable móvil — canvas cálido, no blanco puro */
+#menu-links {
+  background-color: var(--color-bg) !important;
+}
+
+@media (max-width: 767px) {
+  #menu-links:not(.hidden) {
+    border-top: 1px solid var(--color-border);
+    animation: menuSlideDown var(--transition-base) ease forwards;
+  }
+}
+
+@keyframes menuSlideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 /* ============================================
    ANIMACIÓN FADE-IN (scroll)
    ============================================ */
+
+/* desplazamiento reducido y duración más corta — ligero, no molesta */
 .fade-in {
   opacity: 0;
-  transform: translateY(20px);
+  transform: translateY(12px); /* antes: 20px */
   transition:
-    opacity 0.8s ease,
-    transform 0.8s ease;
+    opacity 0.45s ease,
+    /* antes: 0.8s */ transform 0.45s ease;
 }
 
 .fade-in.visible {
   opacity: 1;
   transform: translateY(0);
+}
+
+/* usuarios que prefieren movimiento reducido — sin transform */
+@media (prefers-reduced-motion: reduce) {
+  .fade-in {
+    transform: none;
+    transition: opacity 0.3s ease;
+  }
+  .animate-slide-up {
+    animation: none;
+    opacity: 1;
+  }
+  .animate-pulse {
+    animation: none;
+    opacity: 1;
+  }
 }
