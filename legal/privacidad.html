@@ -12,7 +12,7 @@
     <link rel="canonical" href="https://zaldicode.com/legal/privacidad.html" />
     <script src="https://cdn.tailwindcss.com"></script>
     <link
-      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700;900&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="../styles.css" />
@@ -117,12 +117,43 @@
     </main>
 
     <!-- FOOTER -->
-    <footer class="bg-gray-900 text-white text-center py-6">
-      <p>&copy; 2026 Zaldicode</p>
-      <div class="mt-2 space-x-4 text-sm">
-        <a href="../index.html">Inicio</a>
-        <a href="aviso-legal.html">Aviso legal</a>
-        <a href="cookies.html">Cookies</a>
+    <footer class="site-footer" role="contentinfo">
+      <div class="site-footer__inner">
+        <div>
+          <p class="site-footer__brand-name">Zaldi<span>code</span></p>
+          <p class="site-footer__tagline">
+            Desarrollo web y software a medida desde Navarra para toda España.
+          </p>
+        </div>
+        <div>
+          <p class="site-footer__col-title">Navegación</p>
+          <ul class="site-footer__links">
+            <li><a href="../index.html">Inicio</a></li>
+            <li><a href="../index.html#servicios">Servicios</a></li>
+            <li><a href="../index.html#portfolio">Portfolio</a></li>
+            <li><a href="../index.html#contacto">Contacto</a></li>
+          </ul>
+        </div>
+        <div>
+          <p class="site-footer__col-title">Legal</p>
+          <ul class="site-footer__links">
+            <li><a href="aviso-legal.html">Aviso legal</a></li>
+            <li>
+              <a href="privacidad.html" aria-current="page">Privacidad</a>
+            </li>
+            <li><a href="cookies.html">Cookies</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="site-footer__bottom">
+        <p class="site-footer__copyright">
+          &copy; 2026 Zaldicode — Navarra, España
+        </p>
+        <nav class="site-footer__legal" aria-label="Páginas legales">
+          <a href="aviso-legal.html">Aviso legal</a>
+          <a href="privacidad.html">Privacidad</a>
+          <a href="cookies.html">Cookies</a>
+        </nav>
       </div>
     </footer>
     <!-- Botón WhatsApp flotante -->
