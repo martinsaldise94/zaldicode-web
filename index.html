@@ -54,7 +54,7 @@
     />
     <meta
       property="og:image"
-      content="https://zaldicode.com/assets/og-card.jpg"
+      content="https://zaldicode.com/assets/og-card.png"
     />
     <meta property="og:site_name" content="Zaldicode" />
     <meta property="og:image:width" content="1200" />
@@ -75,7 +75,7 @@
     />
     <meta
       name="twitter:image"
-      content="https://zaldicode.com/assets/og-card.jpg"
+      content="https://zaldicode.com/assets/og-card.png"
     />
     <meta
       name="twitter:image:alt"
@@ -122,7 +122,7 @@
         "description": "Empresa de desarrollo web y software a medida en Navarra. Diseño web profesional, tiendas online, aplicaciones personalizadas y automatización de procesos para empresas de toda España.",
         "url": "https://zaldicode.com",
         "logo": "https://zaldicode.com/assets/logo.png",
-        "image": "https://zaldicode.com/assets/og-card.jpg",
+        "image": "https://zaldicode.com/assets/og-card.png",
         "telephone": "+34697769609",
         "email": "info@zaldicode.com",
         "founder": {
@@ -397,7 +397,7 @@
             >
               Desarrollo web y software
               <span
-                class="bg-gradient-to-t from-orange-200 from-20% to-transparent to-20% bg-no-repeat bg-full pb-0.5"
+                class="md:bg-gradient-to-t md:from-orange-200 md:from-20% md:to-transparent md:to-20% md:bg-no-repeat md:bg-full md:pb-0.5"
               >
                 a medida
               </span>
@@ -476,74 +476,62 @@
         class="py-24 bg-white fade-in"
         aria-labelledby="heading-sobre-mi"
       >
-        <div
-          class="max-w-6xl mx-auto px-6 flex flex-col md:flex-row items-center gap-16"
-        >
-          <!-- FOTO -->
-          <div class="md:w-2/5 flex justify-center md:justify-start shrink-0">
-            <div class="relative">
-              <div
-                class="absolute -inset-3 rounded-3xl bg-orange-100 -rotate-3"
-              ></div>
-              <img
-                src="assets/desarrollo-web-navarra-martin-zaldicode.webp"
-                alt="Martín Saldise, desarrollador web en Navarra — fundador de Zaldicode, empresa de desarrollo de software"
-                class="relative rounded-2xl shadow-xl w-72 h-72 object-cover"
-                width="288"
-                height="288"
-                loading="eager"
-                decoding="async"
-              />
+        <div class="max-w-6xl mx-auto px-6">
+          <div class="flex flex-col md:flex-row items-center gap-16 mb-12">
+            <!-- FOTO -->
+            <div class="md:w-2/5 flex justify-center md:justify-start shrink-0">
+              <div class="relative">
+                <img
+                  src="assets/desarrollo-web-navarra-martin-zaldicode.webp"
+                  alt="Martín Saldise, desarrollador web en Navarra — fundador de Zaldicode, empresa de desarrollo de software"
+                  class="relative rounded-2xl shadow-lg w-64 h-80 object-cover object-top"
+                  width="256"
+                  height="320"
+                  loading="eager"
+                  decoding="async"
+                />
+              </div>
+            </div>
+
+            <!-- TEXTO -->
+            <div class="md:w-3/5">
+              <span
+                class="inline-block text-xs font-bold uppercase tracking-widest text-orange-500 mb-4"
+                >Sobre mí</span
+              >
+              <h2
+                id="heading-sobre-mi"
+                class="text-4xl font-extrabold text-slate-900 tracking-tighter mb-6 leading-tight"
+              >
+                Desarrollador de Software en Navarra
+              </h2>
+              <p class="mb-4 text-slate-600 leading-relaxed">
+                Soy Martín, Desarrollador de Software en Navarra con un
+                <strong class="text-slate-900">background en ciencia</strong>
+                que define mi forma de trabajar: con rigor, análisis y precisión
+                técnica.
+              </p>
+              <p class="mb-4 text-slate-600 leading-relaxed">
+                Aplico una mentalidad analítica para transformar problemas
+                complejos en soluciones digitales simples que funcionan. Mi
+                objetivo es que tu tecnología sea un activo, no un dolor de
+                cabeza.
+              </p>
+              <p class="mb-8 text-slate-600 leading-relaxed">
+                Si buscas algo que no solo sea estético, sino
+                <strong class="text-slate-900"
+                  >optimizado bajo estándares superiores</strong
+                >
+                y enfocado a resultados reales, estás en el lugar adecuado.
+              </p>
+              <a
+                href="#contacto"
+                class="inline-block px-8 py-4 btn-brutal rounded-xl font-bold text-sm uppercase tracking-widest"
+              >
+                Cuéntame tu proyecto
+              </a>
             </div>
           </div>
-
-          <!-- TEXTO -->
-          <div class="md:w-3/5">
-            <span
-              class="inline-block text-xs font-bold uppercase tracking-widest text-orange-500 mb-4"
-              >Sobre mí</span
-            >
-            <h2
-              id="heading-sobre-mi"
-              class="text-4xl font-extrabold text-slate-900 tracking-tighter mb-6 leading-tight"
-            >
-              Desarrollador de Software en Navarra
-            </h2>
-            <p class="mb-4 text-slate-600 leading-relaxed">
-              Soy Martín, Desarrollador de Software en Navarra con un
-              <strong class="text-slate-900">background en ciencia</strong> que
-              define mi forma de trabajar: con rigor, análisis y precisión
-              técnica.
-            </p>
-            <p class="mb-4 text-slate-600 leading-relaxed">
-              Aplico una mentalidad analítica para transformar problemas
-              complejos en soluciones digitales simples que funcionan. Mi
-              objetivo es que tu tecnología sea un activo, no un dolor de
-              cabeza.
-            </p>
-            <p class="mb-8 text-slate-600 leading-relaxed">
-              Si buscas algo que no solo sea estético, sino
-              <strong class="text-slate-900"
-                >optimizado bajo estándares superiores</strong
-              >
-              y enfocado a resultados reales, estás en el lugar adecuado.
-            </p>
-            <a
-              href="#contacto"
-              class="inline-block px-8 py-4 btn-brutal rounded-xl font-bold text-sm uppercase tracking-widest"
-            >
-              Cuéntame tu proyecto
-            </a>
-          </div>
-        </div>
-      </section>
-
-      <!-- Stack tecnológico -->
-      <section
-        class="py-16 bg-slate-50 border-t border-slate-100 fade-in"
-        aria-label="Stack tecnológico"
-      >
-        <div class="max-w-6xl mx-auto px-6">
           <details
             class="group bg-white border border-slate-200 rounded-2xl overflow-hidden"
           >
@@ -1670,34 +1658,34 @@
                 type="text"
                 name="user_name"
                 placeholder="Nombre"
-                class="neomorphic-input p-5 rounded-xl font-medium"
+                class="neomorphic-input w-full p-5 rounded-xl font-medium"
                 required
               />
               <input
                 type="email"
                 name="user_email"
                 placeholder="Email"
-                class="neomorphic-input p-5 rounded-xl font-medium"
+                class="neomorphic-input w-full p-5 rounded-xl font-medium"
                 required
               />
             </div>
             <input
               type="tel"
               name="user_phone"
-              placeholder="Número de teléfono (opcional)"
-              class="neomorphic-input p-5 rounded-xl font-medium"
+              placeholder="Teléfono (opcional)"
+              class="neomorphic-input w-full p-5 rounded-xl font-medium"
             />
             <input
               type="text"
               name="subject"
               placeholder="Asunto"
-              class="neomorphic-input p-5 rounded-xl font-medium"
+              class="neomorphic-input w-full p-5 rounded-xl font-medium"
             />
             <textarea
               id="message"
               name="message"
               placeholder="¿Qué necesitas exactamente?"
-              class="neomorphic-input p-5 rounded-xl font-medium min-h-[160px]"
+              class="neomorphic-input w-full p-5 rounded-xl font-medium min-h-[160px]"
             ></textarea>
             <label class="text-sm flex items-start gap-2">
               <input type="checkbox" id="privacy-check" required />

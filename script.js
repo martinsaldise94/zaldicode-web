@@ -260,7 +260,7 @@ var observer = new IntersectionObserver(
       }
     });
   },
-  { threshold: 0.1 },
+  { threshold: 0.08, rootMargin: "0px 0px 160px 0px" },
 );
 
 document.querySelectorAll(".fade-in").forEach(function (el) {
