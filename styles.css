@@ -248,6 +248,96 @@ body {
 }
 
 /* ============================================
+   HERO — ACCIONES Y SEÑALES DE CONFIANZA
+   ============================================ */
+
+/* contenedor de los CTA del hero — envuelven en móvil */
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.875rem;
+}
+
+/* botón secundario — button-tertiary del DESIGN.md: outline ink, sin relleno */
+.btn-ghost {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  background: transparent;
+  color: var(--color-text);
+  font-weight: 700;
+  line-height: 1.5;
+  text-align: center;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  transition:
+    border-color var(--transition-fast),
+    background-color var(--transition-fast),
+    color var(--transition-fast),
+    transform var(--transition-fast);
+}
+
+.btn-ghost:hover {
+  border-color: var(--color-text);
+  background: var(--color-bg-soft);
+  transform: translateY(-1px);
+}
+
+.btn-ghost:active {
+  transform: translateY(0);
+}
+
+.btn-ghost:focus-visible {
+  outline: 3px solid var(--color-primary);
+  outline-offset: 3px;
+}
+
+/* la flecha avanza al pasar el cursor — micro-interacción */
+.btn-ghost svg {
+  transition: transform var(--transition-fast);
+}
+
+.btn-ghost:hover svg {
+  transform: translateX(3px);
+}
+
+/* fila de señales de confianza bajo los CTA — rellena el hueco en móvil
+   (la terminal se oculta) y aporta credibilidad above-the-fold */
+.hero-trust {
+  list-style: none;
+  margin: 2rem 0 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem 1.5rem;
+}
+
+.hero-trust li {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  font-size: 0.9375rem;
+  font-weight: 500;
+  color: var(--color-text-mid);
+}
+
+.hero-trust svg {
+  width: 18px;
+  height: 18px;
+  color: var(--color-primary);
+  flex-shrink: 0;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .btn-ghost,
+  .btn-ghost svg {
+    transition: none;
+  }
+}
+
+/* ============================================
 /* ============================================
    INPUTS DEL FORMULARIO
    ============================================ */
