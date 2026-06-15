@@ -14,3 +14,15 @@ cleanup.bat
 TODO.md
 
 DESIGN.md
+
+# Dependencias / build
+node_modules/
+npm-debug.log*
+
+# Capturas generadas por Playwright (no versionar)
+tests/screens/
+
+# Skills de IA instaladas localmente (tooling, no forman parte de la web).
+# skills-lock.json sí se versiona; las carpetas de skills no.
+.agents/skills/*
+!.agents/skills/seo-audit/

@@ -1,0 +1,27 @@
+{
+  "name": "zaldicode",
+  "version": "1.0.0",
+  "description": "Este es el repositorio oficial de **Zaldicode**, mi marca personal de desarrollo de software y diseño web profesional.",
+  "main": "script.js",
+  "scripts": {
+    "build:css": "tailwindcss -c tailwind.config.js -i src/tailwind.css -o assets/tailwind.css --minify",
+    "watch:css": "tailwindcss -c tailwind.config.js -i src/tailwind.css -o assets/tailwind.css --watch",
+    "test": "node tests/smoke.mjs"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/martinsaldise94/zaldicode-web.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/martinsaldise94/zaldicode-web/issues"
+  },
+  "homepage": "https://github.com/martinsaldise94/zaldicode-web#readme",
+  "devDependencies": {
+    "playwright": "^1.61.0",
+    "tailwindcss": "^3.4.19"
+  }
+}
