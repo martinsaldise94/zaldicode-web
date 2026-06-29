@@ -21,6 +21,7 @@ npm-debug.log*
 
 # Capturas generadas por Playwright (no versionar)
 tests/screens/
+.playwright-mcp/
 
 # Skills de IA instaladas localmente (tooling, no forman parte de la web).
 # skills-lock.json sí se versiona; las carpetas de skills no.

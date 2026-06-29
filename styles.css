@@ -218,8 +218,12 @@ body {
   font-weight: 700;
   line-height: 1.5;
   letter-spacing: 0.01em;
-  display: inline-block;
-  text-align: center;
+  /* inline-flex (no inline-block): alinea icono + texto en la misma línea.
+     Los SVG son display:block por el reset de Tailwind y, en inline-block,
+     caerían debajo del texto. */
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   border-radius: var(--radius-md);
   box-shadow: var(--shadow-btn);
   transition:
@@ -245,6 +249,25 @@ body {
   outline: 3px solid var(--color-primary);
   outline-offset: 3px;
   box-shadow: 0 0 0 5px var(--color-primary-ring);
+}
+
+/* ============================================
+   PORTFOLIO — PANEL "PRÓXIMAMENTE"
+   ============================================ */
+
+/* borde discontinuo + sin relleno: señala "en preparación", se distingue
+   de una tarjeta de proyecto real (que es sólida con sombra) */
+.portfolio-soon {
+  background: transparent;
+  border: 1.5px dashed var(--color-border);
+  transition:
+    border-color var(--transition-base),
+    background-color var(--transition-base);
+}
+
+.portfolio-soon:hover {
+  border-color: var(--color-primary);
+  background-color: var(--color-primary-bg);
 }
 
 /* ============================================
